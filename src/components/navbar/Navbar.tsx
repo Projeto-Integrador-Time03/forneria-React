@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,25 +13,56 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/75 backdrop-blur-sm' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all shadow-md duration-300 ${
+        isScrolled ? "bg-black/75 backdrop-blur-sm" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-66">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center">
-            <span className="text-white hover:text-yellow-800 font-bold text-3xl">Fornearia 77</span>
-          </div>
+          {/* Logo */}
+          <Link
+            to="/home"
+            className="flex items-center gap-3 text-2xl font-bold text-white hover:text-yellow-800 transition-transform transform hover:scale-105"
+          >
+            <img
+              src=""
+              alt="Logo"
+              className="w-12 h-12 text-3xl text-white rounded-full border-2 border-yellow-800 hover:text-yellow-800 transition"
+            />
+            Fornearia 77
+          </Link>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a href="#" className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium">Home</a>
-              <a href="#" className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium">About</a>
-              <a href="#" className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium">Services</a>
-              <a href="#" className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium">Contact</a>
+              <a
+                href="#"
+                className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
+              >
+                About
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
+              >
+                Services
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
+              >
+                Contact
+              </a>
             </div>
           </div>
         </div>

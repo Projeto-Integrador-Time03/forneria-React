@@ -2,25 +2,25 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="w-full p-0 bg-white">
-      {/* Imagem de destaque */}
-      <img
-        src='https://img.freepik.com/free-photo/baking-delicious-pizza-with-wood-fired-oven_23-2150134250.jpg?t=st=1738351913~exp=1738355513~hmac=6636a7301921a446ee49621d9c3d65a7a9a5275f70d1ef0638e0a4eb1bb3f124&w=996'
-        alt="Imagem da Página Home"
-        className="w-screen h-170 object-cover shadow-lg"
-      />
-
-      {/* Título principal */}
-      <div className="text-center my-6">
-        <h2 className="font-quicksand text-5xl font-bold text-gray-800">
+    <div className="w-screen bg-white">
+      {/* Seção principal com imagem de fundo */}
+      <div
+        className="w-screen h-[750px] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4"
+        style={{
+          backgroundImage:
+            "url('https://img.freepik.com/free-photo/baking-delicious-pizza-with-wood-fired-oven_23-2150134250.jpg?t=st=1738351913~exp=1738355513~hmac=6636a7301921a446ee49621d9c3d65a7a9a5275f70d1ef0638e0a4eb1bb3f124&w=996')",
+        }}
+      >
+        {/* Título principal */}
+        <h2 className="font-quicksand text-5xl font-bold drop-shadow-lg transition-transform transform hover:scale-105">
           Seja Bem-Vindo à Forneria 77!
         </h2>
-        <p className="text-lg mt-2 text-gray-600">
+        <p className="text-lg mt-2 drop-shadow-md">
           Sabor sem regras, do clássico ao saudável. Clique no botão abaixo para
           começar.
         </p>
         <Link to={`/cardapio`}>
-          <button className="mt-4 bg-black hover:bg-yellow-800 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300">
+          <button className="mt-4 bg-black hover:bg-yellow-800 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 transition-transform transform hover:scale-105">
             Começar
           </button>
         </Link>
@@ -33,43 +33,64 @@ function Home() {
         </h3>
       </div>
 
-   {/* Sobre Nós */}
-<div className="grid grid-cols-2 gap-8 items-center px-10">
-  {/* Texto à Esquerda */}
-  <div className="pl-10"> {/* Adiciona espaçamento à esquerda */}
-    <p className="text-gray-600 text-lg">
-      Na Forneria 77, reinventamos a forma de saborear pizza, acreditamos que todo mundo merece saborear uma boa pizza do jeito que mais gosta!  
-      Seja você fã do fast food tradicional ou alguém que busca uma alimentação mais equilibrada, temos opções para todos os gostos.  
-      Para quem ama o sabor clássico e irresistível da pizza, oferecemos receitas tradicionais com ingredientes selecionados, massas macias e recheios generosos, garantindo aquela experiência deliciosa que todo amante de pizza espera.  
-      Mas também acreditamos que uma alimentação equilibrada não precisa abrir mão do prazer, por isso criamos um cardápio pensado para quem busca opções rápidas, nutritivas e deliciosas.  
-      Utilizamos ingredientes frescos, orgânicos e de alta qualidade, garantindo que cada pizza seja leve, saudável e cheia de sabor.  
-      Temos massas preparadas com grãos integrais e oferecemos versões sem glúten, sem lactose e veganas, para atender a diferentes estilos de vida e necessidades alimentares.  
-      Seja para uma refeição rápida ou um momento especial, estamos aqui para oferecer o melhor da pizza fast food com um toque saudável.  
-      <br /><br />
-      Venha provar e descubra uma nova forma de comer bem!
-    </p>
-  </div>
+      {/* Sobre Nós */}
+      <div className="grid grid-cols-2 gap-8 items-center px-10">
+        {/* Texto à Esquerda */}
+        <div className="pl-10">
+          {" "}
+          {/* Adiciona espaçamento à esquerda */}
+          <p className="text-gray-1000 text-xl">
+            Na Forneria 77, reinventamos a forma de saborear pizza, acreditamos
+            que todo mundo merece saborear uma boa pizza do jeito que mais
+            gosta! Seja você fã do fast food tradicional ou alguém que busca uma
+            alimentação mais equilibrada, temos opções para todos os gostos.
+            Para quem ama o sabor clássico e irresistível da pizza, oferecemos
+            receitas tradicionais com ingredientes selecionados, massas macias e
+            recheios generosos, garantindo aquela experiência deliciosa que todo
+            amante de pizza espera. Mas também acreditamos que uma alimentação
+            equilibrada não precisa abrir mão do prazer, por isso criamos um
+            cardápio pensado para quem busca opções rápidas, nutritivas e
+            deliciosas. Utilizamos ingredientes frescos, orgânicos e de alta
+            qualidade, garantindo que cada pizza seja leve, saudável e cheia de
+            sabor. Temos massas preparadas com grãos integrais e oferecemos
+            versões sem glúten, sem lactose e veganas, para atender a diferentes
+            estilos de vida e necessidades alimentares. Seja para uma refeição
+            rápida ou um momento especial, estamos aqui para oferecer o melhor
+            da pizza fast food com um toque saudável.
+            <br />
+            <br />
+            Venha provar e descubra uma nova forma de comer bem!
+          </p>
+        </div>
 
-  {/* Imagens à Direita */}
-  <div className="relative flex flex-col gap-4">
-    <img
-      src="https://source.unsplash.com/300x300/?pizza"
-      alt="Pizza 1"
-      className="w-72 h-72 rounded-lg shadow-lg ml-auto"
-    />
-    <img
-      src="https://source.unsplash.com/300x300/?restaurant"
-      alt="Pizza 2"
-      className="w-72 h-72 rounded-lg shadow-lg ml-auto mt-6"
-    />
-  </div>
-</div>
-
-
-      {/* Seção Segurança */}
-      <div className="w-full bg-stone-800 text-white mt-10 py-10 flex items-center px-6 md:px-20">
-        
+        {/* Imagens à Direita */}
+        <div className="relative flex flex-col gap-4">
+          <img
+            src="https://source.unsplash.com/300x300/?pizza"
+            alt="Pizza 1"
+            className="w-72 h-72 rounded-lg shadow-lg ml-auto"
+          />
+          <img
+            src="https://source.unsplash.com/300x300/?restaurant"
+            alt="Pizza 2"
+            className="w-72 h-72 rounded-xl shadow-lg ml-auto mt-6"
+          />
+        </div>
       </div>
+
+      {/* Colagem */}
+      <div className="relative w-screen pt-[37.5%] shadow-lg rounded-lg overflow-hidden mt-6">
+        <iframe
+          loading="lazy"
+          className="absolute top-0 left-0 w-screen h-full border-none"
+          src="https://www.canva.com/design/DAGdzrUJPzE/UDfqwNJvAfYvy8HypVZwaA/view?embed"
+          allowFullScreen
+          allow="fullscreen"
+        />
+      </div>
+
+      {/* Faixa Preta */}
+      <div className="w-screen bg-stone-800 text-white mt-0 py-10 flex items-center px-6 md:px-20"></div>
 
       {/* Seção Perguntas Frequentes */}
       <div className="text-center mt-10">
