@@ -35,33 +35,33 @@ const Navbar = () => {
               alt="Logo"
               className="w-12 h-12 text-3xl text-white rounded-full border-2 border-yellow-800 hover:text-yellow-800 transition"
             />
-            Fornearia 77
+            Ilustre Forneria 77
           </Link>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <a
-                href="#"
+                href="/home"
                 className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
               >
-                Home
+                Início
               </a>
               <a
-                href="#"
+                href="#sobre-nos"
                 className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
               >
-                About
+                Sobre Nós
               </a>
               <a
-                href="#"
+                href="/cardapio"
                 className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
               >
-                Services
+                Cardápio
               </a>
               <a
-                href="#"
+                href="/login"
                 className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
               >
-                Contact
+                Login
               </a>
             </div>
           </div>

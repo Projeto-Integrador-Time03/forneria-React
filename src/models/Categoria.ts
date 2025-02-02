@@ -2,6 +2,6 @@
 
 export default interface Categoria {
     id: number;
-    descricao: string;
+    nome: string;
     //pizza?: Pizza | null;
 }

@@ -23,9 +23,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         nome: "",
         usuario: "",
         senha: "",
-        endereco: "",
-        telefone: "",
-        cpf: "",
+        foto: "",
+        token: ""
     })
 
     const [isLoading, setIsLoading] = useState(false)
@@ -47,9 +46,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
             nome: "",
             usuario: "",
             senha: "",
-            endereco: "",
-            telefone: "",
-            cpf: "",
+            foto: "",
+            token: ""
         })
     }
 
