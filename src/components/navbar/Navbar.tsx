@@ -33,7 +33,7 @@ const Navbar = () => {
             <img
               src=""
               alt="Logo"
-              className="w-12 h-12 text-3xl text-white rounded-full border-2 border-yellow-800 hover:text-yellow-800 transition"
+              className="w-12 h-12 text-md text-white rounded-full border-2 border-yellow-800 hover:text-yellow-800 transition"
             />
             Ilustre Forneria 77
           </Link>

@@ -3,6 +3,7 @@ import {
     LinkedinLogo,
     InstagramLogo,
   } from "@phosphor-icons/react";
+import { Logo } from "../logo/Logo";
   
   function Footer() {
     let data = new Date().getFullYear();
@@ -26,6 +27,7 @@ import {
         <div className="flex justify-center bg-[#222222] text-white hover:text-yellow-800 font-bold py-60">
           <div className="container flex flex-col items-center py-4">
             
+          <Logo /> 
            
           </div>
         </div>
