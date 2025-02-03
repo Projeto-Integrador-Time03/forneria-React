@@ -433,67 +433,6 @@ function Home() {
           allow="fullscreen"
         />
       </div>
-      {/* Seção de Contato com Foto de Fundo e Mapa */}
-      <div
-        className="w-screen h-[750px] bg-cover bg-center flex items-center justify-center px-10"
-        style={{
-          backgroundImage:
-            "url('https://img.freepik.com/fotos-gratis/restaurante-de-cafe-cafeteria-borrao-com-fundo-bokeh_1421-472.jpg?t=st=1738444355~exp=1738447955~hmac=e2788004d870b43b2dee43be554190320ec18343279979cf4e6fc07627b6cf07&w=996')",
-        }}
-      >
-        {/* Container para o conteúdo */}
-        <div className="w-full max-w-6xl h-[500px] bg-opacity-90 rounded-lg shadow-lg flex overflow-hidden">
-          {/* Área da Esquerda com Fundo Translúcido */}
-          <div className="w-1/3 backdrop-blur-sm bg-opacity-50 p-8 flex flex-col items-center justify-center text-white">
-            {/* Logo Centralizado */}
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Logo Ilustre Forneria 77"
-              className="mb-6"
-            />
-            {/* Texto de Contato */}
-            <h3 className="text-2xl font-bold mb-4">Fale com a Forneria 77</h3>
-            <p className="text-center">
-              Telefone e Endereço Pizzaria:
-              <br />
-              Rua dois, 102 - Centro, Rio de Janeiro, RJ - Brasil
-              <br />
-              <br />
-              JB (21) 90000-9999
-              <br />
-              contato@ilustreforneria.com.br
-              <br />
-              <br />
-              Horário de funcionamento:
-              <br />
-              Segunda a Quinta das 12h às 16h e das 17h Às 00h.
-              <br />
-              Sexta e Sábado das 12h às 01h.
-              <br />
-              Domingo das 12h Às 00h.
-              <br />
-              <br />
-              Telefones e Whatsapp Delivery:
-              <br />
-              JB (21) 90000-9999
-              <br />
-              De domingo a quinta-feira das 18h às 23h59
-              <br />
-              Sexta-feira e sábado das 18h às 00h59.
-            </p>
-          </div>
-
-          {/* Área da Direita com Mapa do Google */}
-          <div className="w-2/3">
-            <iframe
-              className="w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.301603700593!2d-43.17709738447522!3d-22.90224384346783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e9a9a9a9a9%3A0x9a9a9a9a9a9a9a9a!2sCentro%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1633020000000!5m2!1spt-BR!2sbr"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-      </div>
 
       {/* Seção Perguntas Frequentes */}
       <div className="text-center mt-10">
