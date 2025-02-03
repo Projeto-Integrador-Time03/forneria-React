@@ -32,7 +32,7 @@ function App() {
               <Route path="/cadastrartipos" element={<FormTipo />} />
               <Route path="/editartipo/:id" element={<FormTipo />} />
               <Route path="/deletartipo/:id" element={<DeletarTipo />} />
-              <Route path="/pizzas" element={<ListaPizzas />} />
+              <Route path="/cardapio" element={<ListaPizzas />} />
               <Route path="/cadastrarpizza/:id" element={<FormPizza />} />
               <Route path="/editarpizza/:id" element={<FormPizza />} />
               <Route path="/deletarpizza/:id" element={<DeletarPizzas />} />

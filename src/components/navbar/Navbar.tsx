@@ -51,12 +51,7 @@ const Navbar = () => {
               >
                 Sobre Nós
               </a>
-              <a
-                href="/cardapio"
-                className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
-              >
-                Cardápio
-              </a>
+              <Link to='/cardapio' className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105">Cardápio</Link>
               <a
                 href="/login"
                 className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
