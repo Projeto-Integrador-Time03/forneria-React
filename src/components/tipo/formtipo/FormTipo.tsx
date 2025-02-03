@@ -2,14 +2,14 @@ import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
-import Categoria from "../../../models/Categoria";
-//import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import Tipo from "../../../models/Tipo";
 
-function FormCategoria() {
+function FormTipo() {
 
     const navigate = useNavigate();
 
-    const [categoria, setCategoria] = useState<Categoria>({} as Categoria)
+    const [tipo, setTipo] = useState<Tipo>({} as Tipo)
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const { usuario, handleLogout } = useContext(AuthContext)
@@ -19,7 +19,7 @@ function FormCategoria() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/categorias/${id}`, setCategoria, {
+            await buscar(`/tipos/${id}`, setTipo, {
                 headers: { Authorization: token }
             })
         } catch (error: any) {
@@ -43,45 +43,45 @@ function FormCategoria() {
     }, [id])
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-        setCategoria({
-            ...categoria,
+        setTipo({
+            ...tipo,
             [e.target.name]: e.target.value
         })
     }
 
     function retornar() {
-        navigate("/Categorias")
+        navigate("/Tipos")
     }
 
-    async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
+    async function gerarNovoTipo(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         setIsLoading(true)
 
         if (id !== undefined) {
             try {
-                await atualizar(`/categorias`, categoria, setCategoria, {
+                await atualizar(`/tipos`, tipo, setTipo, {
                     headers: { 'Authorization': token }
                 })
-                alert('A categoria foi atualizada com sucesso!')
+                alert('O tipo de pizza foi atualizada com sucesso!')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao atualizar a categoria.')
+                    alert('Erro ao atualizar o tipo de pizza.')
                 }
 
             }
         } else {
             try {
-                await cadastrar(`/categorias`, categoria, setCategoria, {
+                await cadastrar(`/tipos`, tipo, setTipo, {
                     headers: { 'Authorization': token }
                 })
-                alert('A categoria foi cadastrada com sucesso!')
+                alert('O tipo de pizza foi cadastrado com sucesso!')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao cadastrar a categoria.')
+                    alert('Erro ao cadastrar o tipo de pizza.')
                 }
 
             }
@@ -94,18 +94,18 @@ function FormCategoria() {
     return (
         <div className="container flex flex-col items-center justify-center mx-auto">
             <h1 className="text-4xl text-center my-8">
-                {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
+                {id === undefined ? 'Cadastrar Tipo' : 'Editar Tipo'}
             </h1>
 
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
+            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTipo}>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="descricao">Descrição da Categoria</label>
+                    <label htmlFor="nome">Nome do Tipo de Pizza</label>
                     <input
                         type="text"
-                        placeholder="Descreva aqui sua categoria"
+                        placeholder="Descreva aqui o Tipo de Pizza"
                         name='descricao'
                         className="border-2 border-slate-700 rounded p-2"
-                        value={categoria.descricao}
+                        value={tipo.Nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
@@ -130,4 +130,4 @@ function FormCategoria() {
     );
 }
 
-export default FormCategoria;
+export default FormTipo;
