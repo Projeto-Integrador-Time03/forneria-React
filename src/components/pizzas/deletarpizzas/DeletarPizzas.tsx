@@ -77,7 +77,7 @@ function DeletarPizzas() {
             <h1 className='text-4xl text-center my-4'>Deletar Pizza</h1>
 
             <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar pizza a seguir?
+                Você tem certeza de que deseja apagar esta pizza?
             </p>
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
@@ -86,8 +86,10 @@ function DeletarPizzas() {
                     Pizzas
                 </header>
                 <div className="p-4">
-                    <p className='text-xl h-full'>{pizzas.titulo}</p>
-                    <p>{pizzas.texto}</p>
+                    <p className='text-xl h-full'>{pizzas.sabor}</p>
+                    <p>{pizzas.descricao}</p>
+                    <p>{pizzas.valor}</p>
+                    <p>{pizzas.tamanho}</p>
                 </div>
                 <div className="flex">
                     <button 

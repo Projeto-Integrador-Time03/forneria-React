@@ -4,7 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Pizza from "../../../models/Pizza";
 import { buscar } from "../../../services/Service";
-import { DNA } from "react-loader-spinner";
+import { TailSpin } from "react-loader-spinner";
 
 function ListaPizzas() {
 
@@ -44,14 +44,14 @@ function ListaPizzas() {
     return (
         <>
             {pizzas.length === 0 && (
-                <DNA
+                <TailSpin
                     visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
-                />
+                    height={80}
+                    width={80}
+                    color="#000000"
+                    ariaLabel="tail-spin-loading"
+                    wrapperClass="mx-auto"
+            />
             )}
             <div className='container mx-auto my-4 
                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'

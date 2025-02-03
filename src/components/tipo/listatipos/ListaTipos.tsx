@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { DNA } from "react-loader-spinner";
+import { TailSpin } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Tipo from "../../../models/Tipo";
@@ -41,13 +41,13 @@ function ListaTipos() {
     return (
         <>
         {tipos.length === 0 && (
-            <DNA
+            <TailSpin
             visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
-            wrapperStyle={{}}
-            wrapperClass="dna-wrapper mx-auto"
+            height={80}
+            width={80}
+            color="#000000"
+            ariaLabel="tail-spin-loading"
+            wrapperClass="mx-auto"
         />
         )}
             <div className="flex justify-center w-full my-4">

@@ -24,18 +24,18 @@ function App() {
             <Navbar />
           <div className="min-h-[80vh]">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Login />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/tipos" element={<ListaTipos />} />
-              <Route path="/cadastrartipo" element={<FormTipo />} />
-              <Route path="/editartipos/:id" element={<FormTipo />} />
-              <Route path="/deletartipos/:id" element={<DeletarTipo />} />
-              <Route path="/cardapio" element={<ListaPizzas />} />
-              <Route path="/editarpizzas/:id" element={<FormPizza />} />
-              <Route path="/deletarpizzas/:id" element={<DeletarPizzas />} />
-              <Route path="/cadastrarpizzas/:id" element={<FormPizza />} />
+              <Route path="/cadastrartipos" element={<FormTipo />} />
+              <Route path="/editartipo/:id" element={<FormTipo />} />
+              <Route path="/deletartipo/:id" element={<DeletarTipo />} />
+              <Route path="/pizzas" element={<ListaPizzas />} />
+              <Route path="/cadastrarpizza/:id" element={<FormPizza />} />
+              <Route path="/editarpizza/:id" element={<FormPizza />} />
+              <Route path="/deletarpizza/:id" element={<DeletarPizzas />} />
               <Route path="/perfil" element={<Perfil />} />
             </Routes>
           </div>

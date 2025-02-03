@@ -23,7 +23,7 @@ function FormPizza() {
 
     async function buscarPizzaPorId(id: string) {
         try {
-            await buscar(`/postagens/${id}`, setPizza, {
+            await buscar(`/pizzas/${id}`, setPizza, {
                 headers: { Authorization: token }
             })
         } catch (error: any) {
@@ -89,7 +89,7 @@ function FormPizza() {
     }
 
     function retornar() {
-        navigate('/postagens');
+        navigate('/pizzas');
     }
 
     async function gerarNovaPizza(e: ChangeEvent<HTMLFormElement>) {
@@ -98,7 +98,7 @@ function FormPizza() {
 
         if (id !== undefined) {
             try {
-                await atualizar(`/postagens`, pizza, setPizza, {
+                await atualizar(`/pizzas`, pizza, setPizza, {
                     headers: {
                         Authorization: token,
                     },
@@ -116,7 +116,7 @@ function FormPizza() {
 
         } else {
             try {
-                await cadastrar(`/postagens`, pizza, setPizza, {
+                await cadastrar(`/pizzas`, pizza, setPizza, {
                     headers: {
                         Authorization: token,
                     },
@@ -172,6 +172,19 @@ function FormPizza() {
                 </div>
 
                 <div className="flex flex-col gap-2">
+                    <label htmlFor="Descrição">Descrição da Pizza</label>
+                    <input
+                        type=""
+                        placeholder="Descrição"
+                        name="descrição"
+                        required
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={pizza.descricao}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2">
                     <label htmlFor="tamanho">Tamanho da Pizza</label>
                     <input
                         type=""
@@ -179,7 +192,7 @@ function FormPizza() {
                         name="tamanho"
                         required
                         className="border-2 border-slate-700 rounded p-2"
-                        value={pizza.valor}
+                        value={pizza.tamanho}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>

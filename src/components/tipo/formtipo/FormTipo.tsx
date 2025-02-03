@@ -50,7 +50,7 @@ function FormTipo() {
     }
 
     function retornar() {
-        navigate("/Tipos")
+        navigate("/tipos")
     }
 
     async function gerarNovoTipo(e: ChangeEvent<HTMLFormElement>) {

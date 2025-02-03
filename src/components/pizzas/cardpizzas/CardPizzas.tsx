@@ -21,13 +21,11 @@ function CardPizza({ pizza }: CardPizzasProps) {
                     </h3>
                 </div>
                 <div className='p-4 '>
-                    <h4 className='text-lg font-semibold uppercase'>{pizza.titulo}</h4>
-                    <p>{pizza.texto}</p>
-                    <p>Tipo: {pizza.tipo?.descricao}</p>
-                    <p>Data: {new Intl.DateTimeFormat(undefined, {
-                        dateStyle: 'full',
-                        timeStyle: 'medium',
-                    }).format(new Date(pizza.data))}</p>
+                    <h4 className='text-lg font-semibold uppercase'>{pizza.sabor}</h4>
+                    <p>{pizza.valor}</p>
+                    <p>Tipo: {pizza.tipo?.nome}</p>
+                    <p>{pizza.descricao}</p>
+                    <p>{pizza.tamanho}</p>
                 </div>
             </div>
             <div className="flex">

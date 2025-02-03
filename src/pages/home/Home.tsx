@@ -483,7 +483,7 @@ function Home() {
             <iframe
               className="w-full h-full"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.301603700593!2d-43.17709738447522!3d-22.90224384346783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997f5e9a9a9a9a9%3A0x9a9a9a9a9a9a9a9a!2sCentro%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1633020000000!5m2!1spt-BR!2sbr"
-              allowFullScreen=""
+              allowFullScreen
               loading="lazy"
             ></iframe>
           </div>
