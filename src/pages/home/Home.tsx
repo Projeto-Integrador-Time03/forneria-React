@@ -11,13 +11,12 @@ function Home() {
       <div
         className="w-screen h-[750px] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4"
         style={{
-          backgroundImage:
-            "url('https://i.imgur.com/F6nRA6V.jpeg')",
+          backgroundImage: "url('https://i.imgur.com/F6nRA6V.jpeg')",
         }}
       >
         {/* Título principal */}
         <h2 className="font-quicksand text-5xl font-bold drop-shadow-lg transition-transform transform hover:scale-105 animate-pulse">
-          Seja Bem-Vindo à Ilustre Forneria 77!
+          Seja Bem-Vindo à Forneria 77!
         </h2>
         <p className="text-lg mt-2 drop-shadow-md">
           Sabor sem regras, do clássico ao saudável. Clique no botão abaixo para
@@ -42,11 +41,10 @@ function Home() {
         {/* Texto à Esquerda */}
         <div className="pl-10">
           <p className="text-gray-900 text-xl">
-            Na Ilustre Forneria 77, reinventamos a forma de saborear pizza,
-            acreditamos que todo mundo merece saborear uma boa pizza do jeito
-            que mais gosta! Seja você fã do fast food tradicional ou alguém que
-            busca uma alimentação mais equilibrada, temos opções para todos os
-            gostos.
+            Na Forneria 77, reinventamos a forma de saborear pizza, acreditamos
+            que todo mundo merece saborear uma boa pizza do jeito que mais
+            gosta! Seja você fã do fast food tradicional ou alguém que busca uma
+            alimentação mais equilibrada, temos opções para todos os gostos.
             <br />
             <br />
             Para quem ama o sabor clássico e irresistível da pizza, oferecemos
@@ -130,19 +128,8 @@ function Home() {
         </div>
       </div>
 
-      {/* Colagem */}
-      <div className="relative w-screen pt-[37.5%] shadow-lg rounded-lg overflow-hidden mt-6">
-        <iframe
-          loading="lazy"
-          className="absolute top-0 left-0 w-screen h-full border-none"
-          src="https://www.canva.com/design/DAGdzrUJPzE/UDfqwNJvAfYvy8HypVZwaA/view?embed"
-          allowFullScreen
-          allow="fullscreen"
-        />
-      </div>
-
       {/* Faixa Preta */}
-      <div className="w-screen bg-stone-800 text-white mt-0 py-10 flex items-center px-6 md:px-20"></div>
+      <div className="w-screen bg-yellow-900 text-white mt-0 py-6 flex items-center px-6 md:px-20"></div>
 
       {/* Seção Produtos em Destaque */}
       <div className="text-center mt-10">
@@ -150,8 +137,8 @@ function Home() {
           Produtos em Destaque
         </h2>
         <p className="text-lg mt-2 text-gray-600 max-w-2xl mx-auto">
-          Confira nossas pizzas mais populares, salgadas, doces e saudáveis. Clique em uma
-          imagem para ver mais detalhes.
+          Confira nossas pizzas mais populares, salgadas, doces e saudáveis.
+          Clique em uma imagem para ver mais detalhes.
         </p>
       </div>
 
@@ -180,9 +167,12 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Frango com Catupiry</h3>
+                    <h3 className="text-xl font-bold">
+                      Pizza de Frango com Catupiry
+                    </h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Deliciosa pizza de frango com queijo derretido, muito catupiry e borda vulcão de catupiry.
+                      Deliciosa pizza de frango com queijo derretido, muito
+                      catupiry e borda vulcão de catupiry.
                     </p>
                   </div>
                 </div>
@@ -197,9 +187,12 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Bacon com Cheddar</h3>
+                    <h3 className="text-xl font-bold">
+                      Pizza de Bacon com Cheddar
+                    </h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza com bacon, muito cheddar e borda enrolada no cheddar.
+                      Pizza com bacon, muito cheddar e borda enrolada no
+                      cheddar.
                     </p>
                   </div>
                 </div>
@@ -248,7 +241,9 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza Kinder Bueno e Ferrero Rocher</h3>
+                    <h3 className="text-xl font-bold">
+                      Pizza Kinder Bueno e Ferrero Rocher
+                    </h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       Pizza de chocolate com Kinder Bueno e Ferrero Rocher.
                     </p>
@@ -282,7 +277,9 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Morango com Chocolate</h3>
+                    <h3 className="text-xl font-bold">
+                      Pizza de Morango com Chocolate
+                    </h3>
                     <p className="text-sm mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       Pizza de Morango com Chocolate Branco e Nutella.
                     </p>
@@ -366,7 +363,7 @@ function Home() {
       <div className="text-center mt-10">
         <h3 className="text-sm text-gray-500">Avaliações Google</h3>
         <h2 className="text-4xl font-bold text-gray-800">
-          O que falam da Ilustre Forneria 77
+          Avaliações dos Clientes
         </h2>
       </div>
 
@@ -426,6 +423,16 @@ function Home() {
         </div>
       </div>
 
+      {/* Colagem */}
+      <div className="relative w-screen pt-[37.5%] shadow-lg rounded-lg overflow-hidden mt-6">
+        <iframe
+          loading="lazy"
+          className="absolute top-0 left-0 w-screen h-full border-none"
+          src="https://www.canva.com/design/DAGdzrUJPzE/UDfqwNJvAfYvy8HypVZwaA/view?embed"
+          allowFullScreen
+          allow="fullscreen"
+        />
+      </div>
       {/* Seção de Contato com Foto de Fundo e Mapa */}
       <div
         className="w-screen h-[750px] bg-cover bg-center flex items-center justify-center px-10"
@@ -445,9 +452,7 @@ function Home() {
               className="mb-6"
             />
             {/* Texto de Contato */}
-            <h3 className="text-2xl font-bold mb-4">
-              Fale com a Ilustre Forneria 77
-            </h3>
+            <h3 className="text-2xl font-bold mb-4">Fale com a Forneria 77</h3>
             <p className="text-center">
               Telefone e Endereço Pizzaria:
               <br />
