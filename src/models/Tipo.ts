@@ -1,7 +1,7 @@
-//import Pizza from "./Pizza";
+import Pizza from "./Pizza";
 
 export default interface Tipo {
     id: number;
     nome: string;
-    //pizza?: Pizza | null;
+    pizza?: Pizza | null;
 }

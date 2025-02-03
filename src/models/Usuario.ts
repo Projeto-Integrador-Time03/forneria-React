@@ -1,4 +1,4 @@
-//import Pizza from "./Pizza";
+import Pizza from "./Pizza";
 
 export default interface Usuario {
   id: number;
@@ -6,5 +6,5 @@ export default interface Usuario {
   usuario: string;
   foto: string;
   senha: string;
-  //pizza?: Pizza | null;
+  pizza?: Pizza | null;
 }
