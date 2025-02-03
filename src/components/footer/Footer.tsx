@@ -12,17 +12,6 @@ import { Logo } from "../logo/Logo";
       <>
       <section className="w-screen">
 
-        {/* Colagem */}
-        <div className="relative w-screen pt-[37.5%] shadow-lg rounded-lg overflow-hidden mt-6">
-        <iframe
-          loading="lazy"
-          className="absolute top-0 left-0 w-screen h-full border-none"
-          src="https://www.canva.com/design/DAGdzrUJPzE/UDfqwNJvAfYvy8HypVZwaA/view?embed"
-          allowFullScreen
-          allow="fullscreen"
-        />
-       </div>
-
         {/*Footer Maior*/}
         <div className="flex justify-center bg-[#222222] text-white hover:text-yellow-800 font-bold py-60">
           <div className="container flex flex-col items-center py-4">
