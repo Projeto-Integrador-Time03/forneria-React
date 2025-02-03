@@ -12,7 +12,7 @@ function Home() {
         className="w-screen h-[750px] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4"
         style={{
           backgroundImage:
-            "url('https://img.freepik.com/free-photo/baking-delicious-pizza-with-wood-fired-oven_23-2150134250.jpg?t=st=1738351913~exp=1738355513~hmac=6636a7301921a446ee49621d9c3d65a7a9a5275f70d1ef0638e0a4eb1bb3f124&w=996')",
+            "url('https://i.imgur.com/F6nRA6V.jpeg')",
         }}
       >
         {/* Título principal */}

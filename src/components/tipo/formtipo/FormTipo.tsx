@@ -105,7 +105,7 @@ function FormTipo() {
                         placeholder="Descreva aqui o Tipo de Pizza"
                         name='descricao'
                         className="border-2 border-slate-700 rounded p-2"
-                        value={tipo.Nome}
+                        value={tipo.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>

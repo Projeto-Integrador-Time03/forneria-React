@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Usuario from './Usuario';
+import Tipo from './Tipo';
 
 export default interface Pizza {
   titulo: ReactNode;

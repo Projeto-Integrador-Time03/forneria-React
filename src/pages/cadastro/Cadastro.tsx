@@ -53,7 +53,6 @@ function Cadastro() {
       try{
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
         alert('Usuário cadastrado com sucesso!')
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       }catch(error){
         alert('Erro ao cadastrar o usuário!')
       }

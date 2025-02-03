@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
    
-    baseURL: 'https://github.com/Projeto-Integrador-Time03/Backend-Algoritmo-da-Pizza.git'
+    baseURL: 'https://forneria.onrender.com'
 })
 
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {

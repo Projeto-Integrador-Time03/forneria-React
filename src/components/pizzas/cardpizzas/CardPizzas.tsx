@@ -23,7 +23,7 @@ function CardPizza({ pizza }: CardPizzasProps) {
                 <div className='p-4 '>
                     <h4 className='text-lg font-semibold uppercase'>{pizza.titulo}</h4>
                     <p>{pizza.texto}</p>
-                    <p>Tema: {pizza.tema?.descricao}</p>
+                    <p>Tipo: {pizza.tipo?.descricao}</p>
                     <p>Data: {new Intl.DateTimeFormat(undefined, {
                         dateStyle: 'full',
                         timeStyle: 'medium',
