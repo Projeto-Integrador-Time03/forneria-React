@@ -30,8 +30,8 @@ function Login() {
 
     return (
         <div 
-            className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center"
-            style={{ backgroundImage: `url(${pizza2})` }}
+            className="min-h-screen flex items-center justify-center p-30 bg-center"
+            style={{ backgroundImage: `url(https://i.pinimg.com/736x/d8/bb/9a/d8bb9a4d90b8f10445bb7b089e68c50a.jpg)` }}
         >
             <div className="w-full max-w-md mx-auto">
                 <form 

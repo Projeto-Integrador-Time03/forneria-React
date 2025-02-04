@@ -6,6 +6,7 @@ import Tipo from "../../../models/Tipo";
 import CardTipos from "../cardtipos/CardTipos";
 import { buscar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import pizza2 from '../../../assets/pizza2.jpg';
 
 function ListaTipos() {
 
@@ -41,10 +42,10 @@ function ListaTipos() {
 
     return (
       <div 
-          className="min-h-screen bg-cover bg-center bg-fixed"
+          className="min-h-screen bg-center bg-fixed"
           style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=2785&auto=format&fit=crop')",
-              backgroundBlendMode: "overlay",
+              backgroundImage: `url(${pizza2})`
+              //backgroundBlendMode: "overlay",
           }}
       >
           {tipos.length === 0 && (
