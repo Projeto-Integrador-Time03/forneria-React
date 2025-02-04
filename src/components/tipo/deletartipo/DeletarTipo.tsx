@@ -5,6 +5,7 @@ import Tipo from "../../../models/Tipo"
 import { RotatingLines } from "react-loader-spinner"
 import { buscar, deletar } from "../../../services/Service"
 import { ToastAlerta } from "../../../utils/ToastAlerta"
+import { AlertTriangle } from "lucide-react"
 
 function DeletarTipo() {
 
@@ -74,40 +75,54 @@ function DeletarTipo() {
     }
     
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar Tipo</h1>
-            <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o tipo de pizza a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header 
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-                    Tipo
-                </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{tipo.nome}</p>
-                <div className="flex">
-                    <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
-                        onClick={retornar}>
-                        Não
-                    </button>
-                    <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                                   hover:bg-indigo-600 flex items-center justify-center'
-                                   onClick={deletarTipo}>
-                        {isLoading ?
-                            <RotatingLines
-                                strokeColor="white"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
-                            /> :
-                            <span>Sim</span>
-                        }
-                    </button>
+        <div className="min-h-screen bg-[url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] 
+        bg-cover bg-center bg-fixed py-24 min-h-24 bg-transparent flex items-center justify-center p-24">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm">
+                <div className="bg-yellow-900 text-white p-4">
+                    <h2 className="text-xl font-semibold">Confirmar Exclusão</h2>
+                </div>
+                
+                <div className="p-6">
+                    <div className="flex items-center gap-3 mb-4 text-red-500">
+                        <AlertTriangle className="w-6 h-6" />
+                        <p className="font-medium">
+                            Você tem certeza de que deseja apagar este tipo de pizza?
+                        </p>
+                    </div>
+
+                    <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                        <p className="text-sm text-gray-600 mb-2">Tipo a ser excluído:</p>
+                        <p className="text-xl font-bold text-gray-800">{tipo.nome}</p>
+                    </div>
+
+                    <div className="flex gap-2">
+                        <button 
+                            onClick={retornar}
+                            className="flex-1 bg-gray-200 text-gray-800 py-2 px-4 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200"
+                        >
+                            Cancelar
+                        </button>
+                        <button 
+                            onClick={deletarTipo}
+                            className="flex-1 bg-red-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-red-600 transition-colors duration-200 flex items-center justify-center"
+                        >
+                            {isLoading ? (
+                                <RotatingLines
+                                    strokeColor="white"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="24"
+                                    visible={true}
+                                />
+                            ) : (
+                                'Confirmar Exclusão'
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
-export default DeletarTipo
+
+export default DeletarTipo;

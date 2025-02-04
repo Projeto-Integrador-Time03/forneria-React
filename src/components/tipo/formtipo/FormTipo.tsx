@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import Tipo from "../../../models/Tipo";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { Pizza, Save, ArrowLeft } from "lucide-react";
 
 function FormTipo() {
 
@@ -93,40 +94,67 @@ function FormTipo() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
-            <h1 className="text-4xl text-center my-8">
-                {id === undefined ? 'Cadastrar Tipo' : 'Editar Tipo'}
-            </h1>
-
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTipo}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="nome">Nome do Tipo de Pizza</label>
-                    <input
-                        type="text"
-                        placeholder="Descreva aqui o Tipo de Pizza"
-                        name='descricao'
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={tipo.nome}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                    />
+        <div className="min-h-screen bg-[url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] 
+        bg-cover bg-center bg-fixed py-56">
+            <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="px-8 py-6 bg-yellow-800">
+                    <div className="flex items-center justify-between">
+                        <h1 className="text-2xl font-bold text-white flex items-center gap-2">
+                            <Pizza className="h-6 w-6" />
+                            {id === undefined ? 'Cadastrar Tipo de Pizza' : 'Editar Tipo de Pizza'}
+                        </h1>
+                        <button
+                            onClick={retornar}
+                            className="text-white hover:text-indigo-100 transition-colors"
+                            title="Voltar"
+                        >
+                            <ArrowLeft className="h-6 w-6" />
+                        </button>
+                    </div>
                 </div>
-                <button
-                    className="rounded text-slate-100 bg-indigo-400 
-                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
-                    type="submit">
-                    {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
 
-                    }
-                </button>
-            </form>
+                <form className="px-8 py-6 space-y-6" onSubmit={gerarNovoTipo}>
+                    <div className="space-y-2">
+                        <label 
+                            htmlFor="nome" 
+                            className="block text-sm font-medium text-gray-700"
+                        >
+                            Nome do Tipo de Pizza
+                        </label>
+                        <input
+                            type="text"
+                            placeholder="Descreva aqui o Tipo de Pizza"
+                            name='descricao'
+                            className="block w-full px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-yellow-800 focus:border-yellow-800 transition-colors"
+                            value={tipo.nome}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        />
+                    </div>
+
+                    <div className="flex justify-end pt-4">
+                        <button
+                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-yellow-800 hover:bg-yellow-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200 gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                            type="submit"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? (
+                                <RotatingLines
+                                    strokeColor="white"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="24"
+                                    visible={true}
+                                />
+                            ) : (
+                                <>
+                                    <Save className="h-5 w-5" />
+                                    <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                                </>
+                            )}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

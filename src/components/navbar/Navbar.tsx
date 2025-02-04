@@ -157,7 +157,7 @@ if (usuario.token !== "") {
                 Perfil
               </Link>
 
-              <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
+              <Link to='' onClick={logout} className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105">Sair</Link>
               
           </div>
         </div>
