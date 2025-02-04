@@ -5,6 +5,7 @@ import Pizza from "../../../models/Pizza";
 import Tipo from "../../../models/Tipo";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormPizza() {
 
@@ -59,7 +60,7 @@ function FormPizza() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta("Você precisa estar logado", "info");
             navigate('/');
         }
     }, [token])
@@ -104,13 +105,13 @@ function FormPizza() {
                     },
                 });
 
-                alert('Pizza atualizada com sucesso')
+                ToastAlerta("Pizza atualizada com sucesso", "sucesso")
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao atualizar a Pizza')
+                    ToastAlerta("Erro ao atualizar a Pizza", "erro")
                 }
             }
 
@@ -122,13 +123,13 @@ function FormPizza() {
                     },
                 })
 
-                alert('Pizza cadastrada com sucesso');
+                ToastAlerta("Pizza cadastrada com sucesso", "sucesso");
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao cadastrar Pizza');
+                    ToastAlerta("Erro ao cadastrar Pizza", "erro");
                 }
             }
         }

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import Tipo from "../../../models/Tipo";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormTipo() {
 
@@ -31,7 +32,7 @@ function FormTipo() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlerta("Você precisa estar logado!", "info")
             navigate('/')
         }
     }, [token])
@@ -62,12 +63,12 @@ function FormTipo() {
                 await atualizar(`/tipos`, tipo, setTipo, {
                     headers: { 'Authorization': token }
                 })
-                alert('O tipo de pizza foi atualizada com sucesso!')
+                ToastAlerta("O tipo de pizza foi atualizada com sucesso!", "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao atualizar o tipo de pizza.')
+                    ToastAlerta("Erro ao atualizar o tipo de pizza.", "erro")
                 }
 
             }
@@ -76,12 +77,12 @@ function FormTipo() {
                 await cadastrar(`/tipos`, tipo, setTipo, {
                     headers: { 'Authorization': token }
                 })
-                alert('O tipo de pizza foi cadastrado com sucesso!')
+                ToastAlerta("O tipo de pizza foi cadastrado com sucesso!", "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao cadastrar o tipo de pizza.')
+                    ToastAlerta("Erro ao cadastrar o tipo de pizza.", "erro")
                 }
 
             }

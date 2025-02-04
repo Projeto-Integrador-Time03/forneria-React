@@ -14,12 +14,15 @@ import Cadastro from './pages/cadastro/Cadastro'
 import FormPizza from './components/pizzas/formpizzas/FormPizzas'
 import DeletarPizzas from './components/pizzas/deletarpizzas/DeletarPizzas'
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
 
 
 function App() {
   return (
     <>
         <AuthProvider>
+        <ToastContainer/>
         <BrowserRouter>
             <Navbar />
           <div className="min-h-[80vh]">

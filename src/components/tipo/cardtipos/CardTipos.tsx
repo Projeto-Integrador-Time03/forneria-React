@@ -7,22 +7,21 @@ interface CardTiposProps {
 
 function CardTipos({ tipo }: CardTiposProps) {
     return (
-        <div className="min-h-screen bg-transparent flex items-center justify-center p-6">
-            <div className="max-w-sm w-full bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <header className="py-4 px-6 bg-stone-800 text-white font-bold text-2xl text-center">
-                    Tipo
-                </header>
+        <div className="min-h-24 bg-transparent flex items-center justify-center p-4">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-sm">
+                <div className="bg-gray-900 text-white p-4">
+                    <h2 className="text-xl font-semibold">Tipo da Pizza</h2>
+                </div>
                 
-                <div className="p-6">
-                    <p className="text-3xl bg-slate-200 p-6 rounded-lg text-center">
-                        {tipo.nome}
-                    </p>
+                <div className="p-4">
+                <div className="bg-gray-50/80 rounded-lg py-2 px-4 mb-4">
+                    <p className="text-lg text-gray-800 font-medium">{tipo.nome}</p>
                 </div>
 
-                <div className="flex gap-2 p-6">
+                <div className="grid grid-cols-2 gap-6">
                     <Link 
                         to={`/editartipo/${tipo.id}`}
-                        className="flex-1 bg-indigo-400 text-white py-2 px-4 rounded-lg font-medium hover:bg-indigo-800 transition-colors duration-200 text-center"
+                        className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-yellow-800 hover:bg-yellow-900 text-white font-medium transition-colors"
                     >
                         Editar
                     </Link>
@@ -32,9 +31,10 @@ function CardTipos({ tipo }: CardTiposProps) {
                     >
                         Deletar
                     </Link>
-                </div>
+                 </div>
             </div>
         </div>
+    </div>
     );
 }
 

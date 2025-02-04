@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import Tipo from "../../../models/Tipo"
 import { RotatingLines } from "react-loader-spinner"
 import { buscar, deletar } from "../../../services/Service"
+import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 function DeletarTipo() {
 
@@ -33,7 +34,7 @@ function DeletarTipo() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta("Você precisa estar logado", "info")
             navigate('/')
         }
     }, [token])
@@ -54,13 +55,13 @@ function DeletarTipo() {
                 }
             })
 
-            alert('Tipo de pizza apagado com sucesso')
+            ToastAlerta("Tipo de pizza apagado com sucesso", "sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar o tipo de pizza.')
+                ToastAlerta("Erro ao deletar o tipo de pizza.", "erro")
             }
         }
 

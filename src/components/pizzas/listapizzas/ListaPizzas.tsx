@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Pizza from "../../../models/Pizza";
 import { buscar } from "../../../services/Service";
 import { TailSpin } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaPizzas() {
 
@@ -32,7 +33,7 @@ function ListaPizzas() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta("Você precisa estar logado", "info")
             navigate('/');
         }
     }, [token])

@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 import Pizza from "../../../models/Pizza"
+import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 function DeletarPizzas() {
 
@@ -33,7 +34,7 @@ function DeletarPizzas() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta("Você precisa estar logado", "info")
             navigate('/')
         }
     }, [token])
@@ -54,13 +55,13 @@ function DeletarPizzas() {
                 }
             })
 
-            alert('Pizza apagada com sucesso')
+            ToastAlerta("Pizza apagada com sucesso", "sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar a pizza.')
+                ToastAlerta("Erro ao deletar a pizza.", "erro")
             }
         }
 

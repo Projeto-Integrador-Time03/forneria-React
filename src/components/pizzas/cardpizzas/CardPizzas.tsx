@@ -8,7 +8,7 @@ interface CardPizzasProps {
 
 function CardPizza({ pizza }: CardPizzasProps) {
     return (
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+        <div className="min-h-32 bg-gray-100 flex items-center justify-center p-6">
         <div className="max-w-sm w-full bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
           <div className="relative">
             <img 

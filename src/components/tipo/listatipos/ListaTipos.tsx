@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Tipo from "../../../models/Tipo";
 import CardTipos from "../cardtipos/CardTipos";
 import { buscar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaTipos() {
 
@@ -29,7 +30,7 @@ function ListaTipos() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlerta("Você precisa estar logado!", "info")
             navigate('/')
         }
     }, [token])
