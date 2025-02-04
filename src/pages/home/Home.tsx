@@ -167,7 +167,7 @@ function Home() {
                     alt="Pizza de Frango com Catupiry"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">
                       Pizza de Frango com Catupiry
                     </h3>
@@ -186,7 +186,7 @@ function Home() {
                     alt="Pizza de Bacon com Cheddar"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">
                       Pizza de Bacon com Cheddar
                     </h3>
@@ -206,7 +206,7 @@ function Home() {
                     alt="Pizza de Calabresa"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Calabresa</h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       Pizza de calabresa com muito queijo.
@@ -240,7 +240,7 @@ function Home() {
                     alt="Pizza Kinder Bueno e Ferrero Rocher"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">
                       Pizza Kinder Bueno e Ferrero Rocher
                     </h3>
@@ -259,7 +259,7 @@ function Home() {
                     alt="Pizza de Marshmallow"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Marshmallow</h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       Pizza de Marshmallow com chocolate.
@@ -276,7 +276,7 @@ function Home() {
                     alt="Pizza de Morango com Chocolate"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">
                       Pizza de Morango com Chocolate
                     </h3>
@@ -312,7 +312,7 @@ function Home() {
                     alt="Pizza Saudável 1"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Couve-Flor</h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                     Pizza de Couve-Flor com queijo de cabra.
@@ -329,7 +329,7 @@ function Home() {
                     alt="Pizza Saudável 2"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Frango com Espinafre</h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                     Pizza de Frango com Espinafre ao molho branco.
@@ -346,7 +346,7 @@ function Home() {
                     alt="Pizza Saudável 3"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
+                  <div className="absolute bottom-0 left-0 right-0 bg-yellow-800 bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Legumes</h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       Pizza com legumes frescos brazeados com queijo de castanha.
