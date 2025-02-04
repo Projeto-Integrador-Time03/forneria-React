@@ -31,11 +31,11 @@ const Navbar = () => {
             className="flex items-center gap-3 text-2xl font-bold text-white hover:text-yellow-800 transition-transform transform hover:scale-105"
           >
             <img
-              src=""
+              src="https://i.imgur.com/G1yyd1n.jpeg"
               alt="Logo"
               className="w-12 h-12 text-md text-white rounded-full border-2 border-yellow-800 hover:text-yellow-800 transition"
             />
-            Ilustre Forneria 77
+            Forneria 77
           </Link>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
@@ -76,10 +76,16 @@ const Navbar = () => {
                 Cadastrar Tipo
               </Link>
               <Link
-                to="/cadastrarpizzas"
+                to="/cadastrarpizza"
                 className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
               >
                 Cadastrar Pizzas
+              </Link>
+              <Link
+                to="/tipos"
+                className="text-white hover:text-yellow-800 px-3 py-2 rounded-md text-xl font-medium transition-transform transform hover:scale-105"
+              >
+                Tipos
               </Link>
             </div>
           </div>

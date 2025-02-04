@@ -73,7 +73,7 @@ function Login() {
 
                         <button
                             type="submit"
-                            className="w-full flex justify-center items-center py-3 bg-black text-white font-semibold rounded-md hover:bg-yellow-900 transition-colors duration-300"
+                            className="w-full flex justify-center items-center py-3 bg-stone-800 text-white font-semibold rounded-md hover:bg-stone-900 transition-colors duration-300"
                         >
                             {isLoading ? (
                                 <RotatingLines
@@ -99,7 +99,7 @@ function Login() {
 
                         <p className="text-center text-gray-600">
                             Ainda não tem uma conta?{' '}
-                            <Link to="/cadastro" className="text-indigo-600 hover:underline font-medium">
+                            <Link to="/cadastro" className="text-yellow-800 hover:underline font-medium">
                                 Cadastre-se
                             </Link>
                         </p>

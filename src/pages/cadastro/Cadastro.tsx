@@ -1,8 +1,9 @@
-import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Usuario from '../../models/Usuario';
-import { cadastrarUsuario } from '../../services/Service';
-import { RotatingLines } from 'react-loader-spinner';
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import Usuario from "../../models/Usuario";
+import { cadastrarUsuario } from "../../services/Service";
+import { RotatingLines } from "react-loader-spinner";
+import pizza2 from '../../assets/pizza2.jpg';
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -10,10 +11,10 @@ function Cadastro() {
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
-    nome: '',
-    usuario: '',
-    senha: '',
-    foto: ''
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
   });
 
   useEffect(() => {
@@ -23,13 +24,13 @@ function Cadastro() {
   }, [usuario]);
 
   function retornar() {
-    navigate('/login');
+    navigate("/login");
   }
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
       ...usuario,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -45,31 +46,43 @@ function Cadastro() {
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        alert('Usuário cadastrado com sucesso!');
+        alert("Usuário cadastrado com sucesso!");
       } catch (error) {
-        alert('Erro ao cadastrar o usuário!');
+        alert("Erro ao cadastrar o usuário!");
       }
     } else {
-      alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.');
-      setUsuario({ ...usuario, senha: '' });
-      setConfirmaSenha('');
+      alert(
+        "Dados do usuário inconsistentes! Verifique as informações do cadastro."
+      );
+      setUsuario({ ...usuario, senha: "" });
+      setConfirmaSenha("");
     }
 
     setIsLoading(false);
   }
 
   return (
-    <div className="min-h-screen bg-stone-900 flex items-center justify-center p-4">
-      <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div
+      className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center"
+      style={{ backgroundImage: `url(${pizza2})` }}
+    >
+      <div className="w-full max-w-md mx-auto">
         {/* Formulário de Cadastro */}
         <form
-          className="bg-white p-8 rounded-lg shadow-2xl transform transition-all hover:scale-105"
+         className="bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-2xl transform transition-all hover:scale-105"
           onSubmit={cadastrarNovoUsuario}
         >
-          <h2 className="text-5xl font-bold text-center mb-8 text-black">Cadastrar</h2>
+          <h2 className="text-5xl font-bold text-center mb-8 text-black">
+            Cadastrar
+          </h2>
 
           <div className="mb-6">
-            <label htmlFor="nome" className="block text-sm font-medium text-gray-700">Nome</label>
+            <label
+              htmlFor="nome"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Nome
+            </label>
             <input
               type="text"
               id="nome"
@@ -82,7 +95,12 @@ function Cadastro() {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="usuario" className="block text-sm font-medium text-gray-700">Usuário</label>
+            <label
+              htmlFor="usuario"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Usuário
+            </label>
             <input
               type="text"
               id="usuario"
@@ -95,7 +113,12 @@ function Cadastro() {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="foto" className="block text-sm font-medium text-gray-700">Foto</label>
+            <label
+              htmlFor="foto"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Foto
+            </label>
             <input
               type="text"
               id="foto"
@@ -108,7 +131,12 @@ function Cadastro() {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="senha" className="block text-sm font-medium text-gray-700">Senha</label>
+            <label
+              htmlFor="senha"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Senha
+            </label>
             <input
               type="password"
               id="senha"
@@ -121,7 +149,12 @@ function Cadastro() {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="confirmarSenha" className="block text-sm font-medium text-gray-700">Confirmar Senha</label>
+            <label
+              htmlFor="confirmarSenha"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Confirmar Senha
+            </label>
             <input
               type="password"
               id="confirmarSenha"
@@ -136,14 +169,14 @@ function Cadastro() {
           <div className="flex justify-around w-full gap-4">
             <button
               type="button"
-              className="w-1/2 py-3 bg-yellow-900 text-white font-semibold rounded-md hover:bg-black transition-colors"
+              className="w-1/2 py-3 bg-red-700 text-white font-semibold rounded-md hover:bg-red-800 transition-colors"
               onClick={retornar}
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="w-1/2 py-3 bg-black text-white font-semibold rounded-md hover:bg-yellow-900 transition-colors flex justify-center items-center"
+              className="w-1/2 py-3 bg-stone-800 text-white font-semibold rounded-md hover:bg-stone-900 transition-colors flex justify-center items-center"
             >
               {isLoading ? (
                 <RotatingLines
@@ -159,14 +192,6 @@ function Cadastro() {
             </button>
           </div>
         </form>
-
-        {/* Imagem de Fundo (opcional) */}
-        <div className="hidden lg:flex items-center justify-center bg-gradient-to-r from-indigo-900 to-black rounded-lg shadow-2xl">
-          <div className="text-white text-center p-8">
-            <h3 className="text-4xl font-bold mb-4">Crie sua conta!</h3>
-            <p className="text-lg">Junte-se a nós e comece a explorar um mundo de possibilidades.</p>
-          </div>
-        </div>
       </div>
     </div>
   );

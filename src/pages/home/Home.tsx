@@ -6,7 +6,7 @@ import "swiper/swiper-bundle.css"; // Importe o CSS do Swiper
 
 function Home() {
   return (
-    <div className="w-screen bg-white">
+    <div className="w-screen bg-white mb-20">
       {/* Seção principal com imagem de fundo */}
       <div
         className="w-screen h-[750px] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4"
@@ -37,10 +37,10 @@ function Home() {
       </div>
 
       {/* Sobre Nós */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-10 md-10">
         {/* Texto à Esquerda */}
         <div className="pl-10">
-          <p className="text-gray-900 text-xl">
+          <p className="text-gray-900 text-xl " style={{ marginTop: '-100px' }}>
             Na Forneria 77, reinventamos a forma de saborear pizza, acreditamos
             que todo mundo merece saborear uma boa pizza do jeito que mais
             gosta! Seja você fã do fast food tradicional ou alguém que busca uma
@@ -81,7 +81,7 @@ function Home() {
             >
               <SwiperSlide>
                 <img
-                  src="https://img.freepik.com/fotos-gratis/uma-fatia-de-pizza-crocante-com-carne-e-queijo_140725-6974.jpg?w=740"
+                  src="https://i.pinimg.com/736x/33/b3/a6/33b3a636d41b202d1db0092841f57d7d.jpg"
                   alt="Pizza 1"
                   className="w-full h-full object-cover"
                 />
@@ -102,6 +102,7 @@ function Home() {
             animate={{ opacity: 1, x: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-96 h-96 rounded-lg shadow-lg overflow-hidden"
+            style={{ marginTop: '-150px', marginLeft: '30px' }}
           >
             <Swiper
               modules={[Autoplay]}
@@ -128,8 +129,8 @@ function Home() {
         </div>
       </div>
 
-      {/* Faixa Preta */}
-      <div className="w-screen bg-yellow-900 text-white mt-0 py-6 flex items-center px-6 md:px-20"></div>
+      {/* Faixa */}
+      <div className="w-screen bg-yellow-800 text-white mt-0 py-4 flex items-center px-6 md:px-20 mt-12"></div>
 
       {/* Seção Produtos em Destaque */}
       <div className="text-center mt-10">
@@ -171,8 +172,7 @@ function Home() {
                       Pizza de Frango com Catupiry
                     </h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Deliciosa pizza de frango com queijo derretido, muito
-                      catupiry e borda vulcão de catupiry.
+                      Deliciosa pizza de frango, catupiry e borda vulcão de catupiry.
                     </p>
                   </div>
                 </div>
@@ -261,7 +261,7 @@ function Home() {
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Marshmallow</h3>
-                    <p className="text-sm mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       Pizza de Marshmallow com chocolate.
                     </p>
                   </div>
@@ -280,7 +280,7 @@ function Home() {
                     <h3 className="text-xl font-bold">
                       Pizza de Morango com Chocolate
                     </h3>
-                    <p className="text-sm mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
                       Pizza de Morango com Chocolate Branco e Nutella.
                     </p>
                   </div>
@@ -313,9 +313,9 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza Saudável 1</h3>
-                    <p className="text-sm mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de espinafre com tomate seco e queijo de cabra.
+                    <h3 className="text-xl font-bold">Pizza de Couve-Flor</h3>
+                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    Pizza de Couve-Flor com queijo de cabra.
                     </p>
                   </div>
                 </div>
@@ -330,9 +330,9 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza Saudável 2</h3>
-                    <p className="text-sm mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de abobrinha com ricota e manjericão.
+                    <h3 className="text-xl font-bold">Pizza de Frango com Espinafre</h3>
+                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    Pizza de Frango com Espinafre ao molho branco.
                     </p>
                   </div>
                 </div>
@@ -347,9 +347,9 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza Saudável 3</h3>
-                    <p className="text-sm mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de grão-de-bico com vegetais frescos.
+                    <h3 className="text-xl font-bold">Pizza de Legumes</h3>
+                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      Pizza com legumes frescos brazeados com queijo de castanha.
                     </p>
                   </div>
                 </div>
@@ -368,7 +368,7 @@ function Home() {
       </div>
 
       {/* Carrossel de Avaliações */}
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-6 mb-13">
         <div className="w-[80%] min-h-[240px] overflow-hidden rounded-lg shadow-lg">
           <Swiper
             modules={[Autoplay]}

@@ -39,28 +39,36 @@ function ListaTipos() {
     }, [tipos.length])
 
     return (
-        <>
-        {tipos.length === 0 && (
-            <TailSpin
-            visible={true}
-            height={80}
-            width={80}
-            color="#000000"
-            ariaLabel="tail-spin-loading"
-            wrapperClass="mx-auto"
-        />
-        )}
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                       {tipos.map((tipo) => (
-                            <CardTipos key={tipo.id} tipo={tipo} />
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+      <div 
+          className="min-h-screen bg-cover bg-center bg-fixed"
+          style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=2785&auto=format&fit=crop')",
+              backgroundBlendMode: "overlay",
+          }}
+      >
+          {tipos.length === 0 && (
+              <div className="flex justify-center items-center pt-20">
+                  <TailSpin
+                      visible={true}
+                      height={80}
+                      width={80}
+                      color="#000000"
+                      ariaLabel="tail-spin-loading"
+                      wrapperClass="mx-auto"
+                  />
+              </div>
+          )}
+          <div className="flex justify-center w-full py-8">
+              <div className="container flex flex-col px-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {tipos.map((tipo) => (
+                          <CardTipos key={tipo.id} tipo={tipo} />
+                      ))}
+                  </div>
+              </div>
+          </div>
+      </div>
+  );
 }
 
 export default ListaTipos;

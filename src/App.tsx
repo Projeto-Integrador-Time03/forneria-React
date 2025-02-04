@@ -33,6 +33,7 @@ function App() {
               <Route path="/editartipo/:id" element={<FormTipo />} />
               <Route path="/deletartipo/:id" element={<DeletarTipo />} />
               <Route path="/cardapio" element={<ListaPizzas />} />
+              <Route path="/cadastrarpizza" element={<FormPizza />} />
               <Route path="/cadastrarpizza/:id" element={<FormPizza />} />
               <Route path="/editarpizza/:id" element={<FormPizza />} />
               <Route path="/deletarpizza/:id" element={<DeletarPizzas />} />
