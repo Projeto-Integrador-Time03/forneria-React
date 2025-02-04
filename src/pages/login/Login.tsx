@@ -3,7 +3,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
-import pizza2 from '../../assets/pizza2.jpg';
+
 
 function Login() {
     const navigate = useNavigate();

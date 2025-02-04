@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Tipo from '../../../models/Tipo';
-import { Star, ChefHat, Utensils } from 'lucide-react';
+import { Star, ChefHat } from 'lucide-react';
 
 interface CardTiposProps {
     tipo: Tipo;

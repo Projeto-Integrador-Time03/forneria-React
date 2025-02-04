@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
-import pizza2 from '../../assets/pizza2.jpg';
 import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Cadastro() {

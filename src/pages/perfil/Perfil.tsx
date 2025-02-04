@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { AuthContext } from '../../contexts/AuthContext'
 import { ToastAlerta } from '../../utils/ToastAlerta'
-import { Camera, Mail, User, MapPin, Calendar, Briefcase } from 'lucide-react';
+import { Camera, Mail, MapPin, Calendar, Briefcase } from 'lucide-react';
 
 function Perfil() {
 

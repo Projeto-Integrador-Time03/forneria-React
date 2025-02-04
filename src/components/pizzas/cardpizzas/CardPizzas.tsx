@@ -40,6 +40,7 @@ function CardPizza({ pizza }: CardPizzasProps) {
                 <Utensils className="w-5 h-5 mr-2" />
                 <p className="text-sm">Tamanho: {pizza.tamanho}</p>
               </div>
+
             </div>
             <div className="mt-6 flex gap-2">
                     <Link to={`/editarpizza/${pizza.id}`}
