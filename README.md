@@ -1,50 +1,82 @@
-# React + TypeScript + Vite
+# Forneria 77 - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o frontend da aplicação **Forneria 77**, desenvolvido em **React com TypeScript**. O projeto permite que usuários visualizem e realizem pedidos de produtos.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Axios
 
-## Expanding the ESLint configuration
+## Configuração do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Requisitos
+Antes de executar o projeto, certifique-se de ter instalado:
 
-- Configure the top-level `parserOptions` property like this:
+- **Node.js** (versão recomendada: 18+)
+- **NPM** ou **Yarn**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Clonando o Repositório
+```bash
+git clone https://github.com/seu-usuario/delivery-frontend.git
+cd delivery-frontend
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Instalando Dependências
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Com NPM:
+```bash
+npm install
+````
+Ou com Yarn:
+```bash
+yarn install
 ```
+### Executando o Projeto
+
+Com NPM:
+```bash
+npm run dev
+```
+Ou com Yarn:
+```bash
+yarn dev
+```
+Acesse a aplicação no navegador:
+```bash
+http://localhost:5173
+```
+
+### Estrutura do Projeto
+```bash
+delivery-React/
+├── src/
+│   ├── components/        # Componentes reutilizáveis
+│   ├── pages/             # Páginas principais
+│   ├── services/          # Requisições para a API
+│   ├── styles/            # Estilos da aplicação
+│   ├── main.tsx           # Arquivo principal
+│   ├── App.tsx            # Componente raiz
+├── public/                # Arquivos públicos (index.html)
+├── package.json           # Dependências do projeto
+├── tsconfig.json          # Configuração do TypeScript
+├── vite.config.ts         # Configuração do Vite
+├── README.md              # Documentação
+```
+
+### Configuração da API
+Para conectar o frontend ao backend, edite o arquivo de configuração e ajuste a URL da API:
+
+```bash
+const API_BASE_URL = "https://forneria.onrender.com"; // Ajuste conforme necessário
+```
+### Desenvolvido por:
+
+- [Estafany Santos](https://www.linkedin.com/in/estefany-santos/)
+- [Lucas Matheus](https://www.linkedin.com/in/lucas-matheus-lima/)
+- [Kevin Schuab](https://www.linkedin.com/in/kevin-schuab/)
+- [Priscila Soares](https://www.linkedin.com/in/priscila-soares-161644111/)
+- [Rayane Moara](https://www.linkedin.com/in/rayane-moara/)
+- [Sarah Tavares](https://www.linkedin.com/in/sarahtavaresl)
