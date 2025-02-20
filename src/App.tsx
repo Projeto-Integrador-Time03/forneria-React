@@ -1,3 +1,4 @@
+// teste para subir pro git
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/footer/Footer'
