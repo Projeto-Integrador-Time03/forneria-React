@@ -4,6 +4,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Importe o CSS do Swiper
 
+
 function Home() {
   return (
     <div className="w-screen bg-white mb-20">
@@ -11,7 +12,8 @@ function Home() {
       <div
         className="w-screen h-[750px] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4"
         style={{
-          backgroundImage: "url(https://images.unsplash.com/photo-1536622308015-0740925b8221?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1536622308015-0740925b8221?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
         }}
       >
         {/* Título principal */}
@@ -40,7 +42,7 @@ function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-10 md-10">
         {/* Texto à Esquerda */}
         <div className="pl-10">
-          <p className="text-gray-900 text-xl " style={{ marginTop: '-100px' }}>
+          <p className="text-gray-900 text-xl " style={{ marginTop: "-100px" }}>
             Na Forneria 77, reinventamos a forma de saborear pizza, acreditamos
             que todo mundo merece saborear uma boa pizza do jeito que mais
             gosta! Seja você fã do fast food tradicional ou alguém que busca uma
@@ -102,7 +104,7 @@ function Home() {
             animate={{ opacity: 1, x: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-96 h-96 rounded-lg shadow-lg overflow-hidden"
-            style={{ marginTop: '-150px', marginLeft: '30px' }}
+            style={{ marginTop: "-150px", marginLeft: "30px" }}
           >
             <Swiper
               modules={[Autoplay]}
@@ -130,18 +132,86 @@ function Home() {
       </div>
 
       {/* Faixa */}
-      <div className="w-screen bg-yellow-800 text-white mt-0 py-4 flex items-center px-6 md:px-20 mt-12"></div>
+      <div className="w-screen bg-yellow-900 h-16 mt-16 relative overflow-hidden">
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: "-100%" }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute whitespace-nowrap flex items-center h-full"
+        >
+          <span className="text-white text-xl font-semibold px-8">
+            Sabor Artesanal
+          </span>
+          <span className="text-white text-xl font-semibold px-8">
+            ⭐ Qualidade Premium
+          </span>
+          <span className="text-white text-xl font-semibold px-8">
+            ❤ Feito com Amor
+          </span>
+          <span className="text-white text-xl font-semibold px-8">
+            🌿 Ingredientes Selecionados
+          </span>
+        </motion.div>
+      </div>
 
       {/* Seção Produtos em Destaque */}
-      <div className="text-center mt-10">
-        <h2 className="text-4xl font-bold text-gray-800">
-          Produtos em Destaque
-        </h2>
-        <p className="text-lg mt-2 text-gray-600 max-w-2xl mx-auto">
-          Confira nossas pizzas mais populares, salgadas, doces e saudáveis.
-          Clique em uma imagem para ver mais detalhes.
-        </p>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative py-16 bg-gradient-to-b from-white to-yellow-50"
+      >
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/pizza-pattern.png')] opacity-5"></div>
+        </div>
+        <div className="relative z-10">
+          <div className="text-center">
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-yellow-800 text-lg font-semibold"
+            >
+              Descubra Nossos
+            </motion.span>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-4xl font-bold text-gray-800 mt-2 mb-4"
+            >
+              Produtos em Destaque
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex justify-center gap-2 mb-6"
+            >
+              <span className="w-2 h-2 rounded-full bg-yellow-800"></span>
+              <span className="w-2 h-2 rounded-full bg-yellow-600"></span>
+              <span className="w-2 h-2 rounded-full bg-yellow-800"></span>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="text-lg text-gray-600 max-w-2xl mx-auto px-4"
+            >
+              Confira nossas pizzas mais populares, salgadas, doces e saudáveis.
+              Clique em uma imagem para ver mais detalhes.
+            </motion.p>
+          </div>
+        </div>
+        
+      </motion.div>
 
       {/* Carrosséis de Produtos */}
       <div className="flex flex-col md:flex-row justify-center items-start gap-8 px-10 mt-6">
@@ -172,7 +242,8 @@ function Home() {
                       Pizza de Frango com Catupiry
                     </h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Deliciosa pizza de frango, catupiry e borda vulcão de catupiry.
+                      Deliciosa pizza de frango, catupiry e borda vulcão de
+                      catupiry.
                     </p>
                   </div>
                 </div>
@@ -315,7 +386,7 @@ function Home() {
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Couve-Flor</h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                    Pizza de Couve-Flor com queijo de cabra.
+                      Pizza de Couve-Flor com queijo de cabra.
                     </p>
                   </div>
                 </div>
@@ -330,9 +401,11 @@ function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Frango com Espinafre</h3>
+                    <h3 className="text-xl font-bold">
+                      Pizza de Frango com Espinafre
+                    </h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                    Pizza de Frango com Espinafre ao molho branco.
+                      Pizza de Frango com Espinafre ao molho branco.
                     </p>
                   </div>
                 </div>
@@ -349,7 +422,8 @@ function Home() {
                   <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
                     <h3 className="text-xl font-bold">Pizza de Legumes</h3>
                     <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza com legumes frescos brazeados com queijo de castanha.
+                      Pizza com legumes frescos brazeados com queijo de
+                      castanha.
                     </p>
                   </div>
                 </div>
@@ -360,6 +434,7 @@ function Home() {
       </div>
 
       {/* Seção de Avaliações */}
+      <div className= "bg-amber-100 py-10 mt-10 ">
       <div className="text-center mt-10">
         <h3 className="text-sm text-gray-500">Avaliações Google</h3>
         <h2 className="text-4xl font-bold text-gray-800">
@@ -422,6 +497,7 @@ function Home() {
           </Swiper>
         </div>
       </div>
+      </div>
 
       {/* Colagem */}
       <div className="relative w-screen pt-[37.5%] shadow-lg rounded-lg overflow-hidden mt-6">
@@ -435,45 +511,76 @@ function Home() {
       </div>
 
       {/* Seção Perguntas Frequentes */}
-      <div className="text-center mt-10">
-        <h2 className="text-4xl font-bold text-gray-800">Ficou com Dúvidas?</h2>
-        <p className="text-lg mt-2 text-gray-600 max-w-2xl mx-auto">
-          Separamos as perguntas mais frequentes entre os clientes. Caso você
-          permaneça com dúvidas, entre em contato com a nossa central de
-          atendimento pelo app Ilustre Forneria 77.
-        </p>
-      </div>
-      <div className="max-w-4xl mx-auto mt-6 space-y-4">
-        <details className="bg-white shadow-lg rounded-lg p-4 border border-gray-200">
-          <summary className="text-xl font-semibold cursor-pointer">
-            Canais de Relacionamento
-          </summary>
-          <p className="text-gray-600 mt-2">
-            Sou Cliente: Para entrar em contato com a gente, você pode acessar:
-            <br /> IlustreForneria77App: nossa central de Ajuda dentro do
-            aplicativo.
-            <br /> 77Food: nossa central de Ajuda dentro do aplicativo.
-            <br /> Ouvidoria Ilustre Forneria 77 – Clique aqui.
-          </p>
-        </details>
-        <details className="bg-white shadow-lg rounded-lg p-4 border border-gray-200">
-          <summary className="text-xl font-semibold cursor-pointer">
-            Meu Pedido não Chegou
-          </summary>
-          <p className="text-gray-600 mt-2">
-            Não se preocupe, você pode entrar em contato com a loja pelo próprio
-            aplicativo...
-          </p>
-        </details>
-        <details className="bg-white shadow-lg rounded-lg p-4 border border-gray-200">
-          <summary className="text-xl font-semibold cursor-pointer">
-            Não quero mais o Pedido
-          </summary>
-          <p className="text-gray-600 mt-2">
-            Caso o pedido tenha mais de 5 minutos, vai aparecer a opção "Clique
-            para contato com nosso atendimento".
-          </p>
-        </details>
+      <div className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl font-bold text-gray-800"
+          >
+            Ficou com Dúvidas?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl mt-4 text-gray-600 max-w-3xl mx-auto px-6"
+          >
+            Separamos as perguntas mais frequentes entre os clientes. Caso você
+            permaneça com dúvidas, entre em contato com a nossa central de
+            atendimento pelo app Forneria 77.
+          </motion.p>
+        </div>
+
+        <div className="max-w-4xl mx-auto mt-12 space-y-6 px-6">
+          <motion.details
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group"
+          >
+            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300">
+              Canais de Relacionamento
+            </summary>
+            <div className="mt-4 text-gray-600 space-y-2">
+              <p>Sou Cliente: Para entrar em contato com a gente, você pode acessar:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Forneria77App: nossa central de Ajuda dentro do aplicativo</li>
+                <li>77Food: nossa central de Ajuda dentro do aplicativo</li>
+                <li>Ouvidoria Forneria 77 – Clique aqui</li>
+              </ul>
+            </div>
+          </motion.details>
+
+          <motion.details
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group"
+          >
+            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300">
+              Meu Pedido não Chegou
+            </summary>
+            <p className="mt-4 text-gray-600">
+              Não se preocupe, você pode entrar em contato com a loja pelo próprio aplicativo...
+            </p>
+          </motion.details>
+
+          <motion.details
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group"
+          >
+            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300">
+              Não quero mais o Pedido
+            </summary>
+            <p className="mt-4 text-gray-600">
+              Caso o pedido tenha mais de 5 minutos, vai aparecer a opção "Clique para contato com nosso atendimento".
+            </p>
+          </motion.details>
+        </div>
       </div>
     </div>
   );

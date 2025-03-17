@@ -17,6 +17,7 @@ import DeletarPizzas from './components/pizzas/deletarpizzas/DeletarPizzas'
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
+import Sobre from './pages/sobre/Sobre'
 
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
               <Route path="/editarpizza/:id" element={<FormPizza />} />
               <Route path="/deletarpizza/:id" element={<DeletarPizzas />} />
               <Route path="/perfil" element={<Perfil />} />
+              <Route path="/sobre" element={<Sobre />} />
+
             </Routes>
           </div>
           <Footer />
