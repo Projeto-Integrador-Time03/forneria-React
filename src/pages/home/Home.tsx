@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Importe o CSS do Swiper
 
@@ -32,130 +32,329 @@ function Home() {
       </div>
 
       {/* Seção "Por que nos escolher?" */}
-      <div id="sobre-nos" className="text-center mt-10 transition duration-300">
-        <h3 className="text-4xl font-bold mb-6 border-b-4 border-yellow-800 inline-block pb-2 text-gray-800">
-          Por que nos escolher?
-        </h3>
-      </div>
-
-      {/* Sobre Nós */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-10 md-10">
-        {/* Texto à Esquerda */}
-        <div className="pl-10">
-          <p className="text-gray-900 text-xl " style={{ marginTop: "-100px" }}>
-            Na Forneria 77, reinventamos a forma de saborear pizza, acreditamos
-            que todo mundo merece saborear uma boa pizza do jeito que mais
-            gosta! Seja você fã do fast food tradicional ou alguém que busca uma
-            alimentação mais equilibrada, temos opções para todos os gostos.
-            <br />
-            <br />
-            Para quem ama o sabor clássico e irresistível da pizza, oferecemos
-            receitas tradicionais com ingredientes selecionados, massas macias e
-            recheios generosos, garantindo aquela experiência deliciosa que todo
-            amante de pizza espera.
-            <br />
-            <br />
-            Mas também acreditamos que uma alimentação equilibrada não precisa
-            abrir mão do prazer, por isso criamos um cardápio pensado para quem
-            busca opções rápidas, nutritivas e deliciosas. Utilizamos
-            ingredientes frescos, orgânicos e de alta qualidade, garantindo que
-            cada pizza seja leve, saudável e cheia de sabor.
-            <br />
-            <br />
-            Venha provar e descubra uma nova forma de comer bem!
-          </p>
-        </div>
-
-        {/* Imagens com Carrossel e Efeito Cascata */}
-        <div className="relative flex flex-col gap-4">
-          {/* Primeira Imagem */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.8 }}
-            className="w-96 h-96 rounded-lg shadow-lg ml-auto overflow-hidden"
-          >
-            <Swiper
-              modules={[Autoplay]}
-              autoplay={{ delay: 2100 }}
-              speed={1000}
-              loop
-            >
-              <SwiperSlide>
-                <img
-                  src="https://i.pinimg.com/736x/33/b3/a6/33b3a636d41b202d1db0092841f57d7d.jpg"
-                  alt="Pizza 1"
-                  className="w-full h-full object-cover"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src="https://img.freepik.com/fotos-gratis/queijo-georgiano-khachapuri-imeruli-comida-tradicional-da-georgia-khachapuri-quente_114579-140.jpg?w=360"
-                  alt="Pizza 2"
-                  className="w-full h-full object-cover"
-                />
-              </SwiperSlide>
-            </Swiper>
-          </motion.div>
-
-          {/* Segunda Imagem */}
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 20 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-96 h-96 rounded-lg shadow-lg overflow-hidden"
-            style={{ marginTop: "-150px", marginLeft: "30px" }}
-          >
-            <Swiper
-              modules={[Autoplay]}
-              autoplay={{ delay: 2100 }}
-              speed={1000}
-              loop
-            >
-              <SwiperSlide>
-                <img
-                  src="https://i.pinimg.com/736x/7c/18/b2/7c18b221d22d6ea6887d6583149b9d7b.jpg"
-                  alt="Restaurante 1"
-                  className="w-full h-full object-cover"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src="https://i.pinimg.com/736x/27/e5/24/27e5242a418b1ba7e8d011dbd67f34cb.jpg"
-                  alt="Restaurante 2"
-                  className="w-full h-full object-cover"
-                />
-              </SwiperSlide>
-            </Swiper>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Faixa */}
-      <div className="w-screen bg-yellow-900 h-16 mt-16 relative overflow-hidden">
-        <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: "-100%" }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute whitespace-nowrap flex items-center h-full"
+      <div id="sobre-nos" className="text-center mt-16 mb-12 transition duration-300">
+        <motion.h3 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold mb-6 border-b-4 border-yellow-800 inline-block pb-2 text-gray-800"
         >
-          <span className="text-white text-xl font-semibold px-8">
-            Sabor Artesanal
-          </span>
-          <span className="text-white text-xl font-semibold px-8">
-            ⭐ Qualidade Premium
-          </span>
-          <span className="text-white text-xl font-semibold px-8">
-            ❤ Feito com Amor
-          </span>
-          <span className="text-white text-xl font-semibold px-8">
-            🌿 Ingredientes Selecionados
-          </span>
+          Por que nos escolher?
+        </motion.h3>
+      </div>
+
+      {/* Sobre Nós - Layout Aprimorado */}
+      <div className="max-w-7xl mx-auto px-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Texto à Esquerda com Cards */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="space-y-6">
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-yellow-800"
+              >
+                <h4 className="text-xl font-bold text-yellow-800 mb-2">Tradição & Inovação</h4>
+                <p className="text-gray-700">
+                  Na Forneria 77, reinventamos a forma de saborear pizza, combinando receitas tradicionais com inovações que surpreendem. Acreditamos que todo mundo merece saborear uma boa pizza do jeito que mais gosta!
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-yellow-800"
+              >
+                <h4 className="text-xl font-bold text-yellow-800 mb-2">Sabor Para Todos</h4>
+                <p className="text-gray-700">
+                  Seja você fã do fast food tradicional ou alguém que busca uma alimentação mais equilibrada, temos opções para todos os gostos. Nossas receitas tradicionais têm ingredientes selecionados, massas macias e recheios generosos.
+                </p>
+              </motion.div>
+              
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-yellow-800"
+              >
+                <h4 className="text-xl font-bold text-yellow-800 mb-2">Equilíbrio & Prazer</h4>
+                <p className="text-gray-700">
+                  Acreditamos que uma alimentação equilibrada não precisa abrir mão do prazer. Nosso cardápio é pensado para quem busca opções rápidas, nutritivas e deliciosas, com ingredientes frescos, orgânicos e de alta qualidade.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Imagens com Carrossel e Efeito Cascata - Redesenhado */}
+          <div className="relative">
+            {/* Primeira Imagem */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-full h-80 rounded-xl shadow-xl overflow-hidden"
+            >
+              <Swiper
+                modules={[Autoplay]}
+                autoplay={{ delay: 3000 }}
+                speed={1000}
+                loop
+                className="w-full h-full"
+              >
+                <SwiperSlide>
+                  <img
+                    src="https://i.pinimg.com/736x/33/b3/a6/33b3a636d41b202d1db0092841f57d7d.jpg"
+                    alt="Pizza Artesanal"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-xl font-bold">Pizzas Artesanais</h3>
+                      <p className="text-sm">Tradição italiana em cada fatia</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="https://img.freepik.com/fotos-gratis/queijo-georgiano-khachapuri-imeruli-comida-tradicional-da-georgia-khachapuri-quente_114579-140.jpg?w=360"
+                    alt="Pizza Especial"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-xl font-bold">Especialidades</h3>
+                      <p className="text-sm">Receitas exclusivas da casa</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </motion.div>
+
+            {/* Segunda Imagem */}
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-64 h-64 rounded-xl shadow-xl overflow-hidden absolute -bottom-10 -right-5 border-4 border-white"
+            >
+              <Swiper
+                modules={[Autoplay]}
+                autoplay={{ delay: 3500 }}
+                speed={1000}
+                loop
+                className="w-full h-full"
+              >
+                <SwiperSlide>
+                  <img
+                    src="https://i.pinimg.com/736x/7c/18/b2/7c18b221d22d6ea6887d6583149b9d7b.jpg"
+                    alt="Ambiente Acolhedor"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                    <div className="absolute bottom-3 left-3 text-white">
+                      <h3 className="text-lg font-bold">Ambiente Acolhedor</h3>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src="https://i.pinimg.com/736x/27/e5/24/27e5242a418b1ba7e8d011dbd67f34cb.jpg"
+                    alt="Experiência Única"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                    <div className="absolute bottom-3 left-3 text-white">
+                      <h3 className="text-lg font-bold">Experiência Única</h3>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </motion.div>
+            
+            {/* Elemento decorativo */}
+            <div className="absolute -top-6 -left-6 w-20 h-20 bg-yellow-800 rounded-full opacity-20"></div>
+            <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-yellow-600 rounded-full opacity-20"></div>
+          </div>
+        </div>
+        
+        {/* Ícones de Diferenciais */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
+        >
+          <div className="flex flex-col items-center text-center p-4">
+            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+              <img src="/icons/pizza-icon.svg" alt="Qualidade" className="w-8 h-8" onError={(e) => {
+                e.currentTarget.src = "https://img.icons8.com/ios/50/pizza.png";
+              }} />
+            </div>
+            <h4 className="font-bold text-gray-800">Ingredientes Premium</h4>
+            <p className="text-sm text-gray-600 mt-2">Selecionados diariamente para garantir frescor e sabor</p>
+          </div>
+          
+          <div className="flex flex-col items-center text-center p-4">
+            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+              <img src="/icons/chef-icon.svg" alt="Chefs" className="w-8 h-8" onError={(e) => {
+                e.currentTarget.src = "https://img.icons8.com/ios/50/chef-hat.png";
+              }} />
+            </div>
+            <h4 className="font-bold text-gray-800">Chefs Especializados</h4>
+            <p className="text-sm text-gray-600 mt-2">Mestres pizzaiolos com experiência internacional</p>
+          </div>
+          
+          <div className="flex flex-col items-center text-center p-4">
+            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+              <img src="/icons/delivery-icon.svg" alt="Entrega" className="w-8 h-8" onError={(e) => {
+                e.currentTarget.src = "https://img.icons8.com/ios/50/delivery--v1.png";
+              }} />
+            </div>
+            <h4 className="font-bold text-gray-800">Entrega Rápida</h4>
+            <p className="text-sm text-gray-600 mt-2">Sua pizza chega quentinha e no tempo prometido</p>
+          </div>
+          
+          <div className="flex flex-col items-center text-center p-4">
+            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+              <img src="/icons/heart-icon.svg" alt="Paixão" className="w-8 h-8" onError={(e) => {
+                e.currentTarget.src = "https://img.icons8.com/ios/50/like--v1.png";
+              }} />
+            </div>
+            <h4 className="font-bold text-gray-800">Feito com Paixão</h4>
+            <p className="text-sm text-gray-600 mt-2">Cada pizza é preparada com dedicação e amor</p>
+          </div>
         </motion.div>
+      </div>
+
+      {/* Faixa Profissional de Pizzaria */}
+      <div className="w-full bg-yellow-900 py-10 relative overflow-hidden">
+        {/* Textura de madeira ao fundo */}
+        <div className="absolute inset-0 bg-[url('/wood-texture.jpg')] opacity-20 mix-blend-multiply"></div>
+        
+        {/* Padrão de pizza estilizado no fundo */}
+        <div className="absolute -left-16 -top-16 w-32 h-32 rounded-full border-4 border-dashed border-yellow-600/30"></div>
+        <div className="absolute right-10 bottom-10 w-40 h-40 rounded-full border-4 border-dashed border-yellow-600/20"></div>
+        
+        {/* Container principal com sombra interna */}
+        <div className="relative max-w-7xl mx-auto px-4 py-2">
+          {/* Decoração superior */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
+          
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            {/* Lado esquerdo - Slogan com decoração */}
+            <div className="mb-6 md:mb-0 text-center md:text-left relative">
+              <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-2 h-16 bg-yellow-600 rounded-full hidden md:block"></div>
+              <h3 className="text-white text-2xl md:text-3xl font-serif italic drop-shadow-md">
+                "Tradição italiana desde 1977"
+              </h3>
+              <div className="h-1 w-32 bg-white/80 mt-2 mx-auto md:mx-0"></div>
+              <p className="text-yellow-200 mt-2 text-sm italic">Sabor que atravessa gerações</p>
+            </div>
+            
+            {/* Centro - Logo ou Emblema com efeito de sombra */}
+            <div className="hidden md:block relative">
+              <div className="absolute inset-0 w-24 h-24 rounded-full bg-yellow-600 blur-md opacity-70 transform translate-x-1 translate-y-1"></div>
+              <div className="relative w-24 h-24 rounded-full bg-white flex items-center justify-center border-4 border-yellow-600 shadow-lg">
+                <span className="text-yellow-800 text-3xl font-bold font-serif">77</span>
+              </div>
+              <div className="absolute -right-2 -top-2 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                ®
+              </div>
+            </div>
+            
+            {/* Lado direito - Call to Action com estilo de cartão */}
+            <div className="text-center md:text-right bg-yellow-900/50 p-4 rounded-lg border-l-4 border-yellow-600">
+              <p className="text-yellow-200 text-lg mb-1 font-medium">Peça agora pelo telefone</p>
+              <p className="text-white text-2xl md:text-3xl font-bold tracking-wider flex items-center justify-center md:justify-end">
+                <span className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-800" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                </span>
+                (11) 4777-7777
+              </p>
+              <div className="mt-2 text-xs text-yellow-100 flex items-center justify-center md:justify-end space-x-2">
+                <span>Seg-Sex: 18h-23h</span>
+                <span className="w-1 h-1 bg-yellow-200 rounded-full"></span>
+                <span>Sáb-Dom: 18h-00h</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Separador decorativo */}
+          <div className="my-6 flex items-center">
+            <div className="flex-grow h-px bg-gradient-to-r from-transparent via-yellow-600/50 to-transparent"></div>
+            <div className="mx-4 flex space-x-1">
+              <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+              <span className="w-2 h-2 bg-white rounded-full"></span>
+              <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+            </div>
+            <div className="flex-grow h-px bg-gradient-to-r from-transparent via-yellow-600/50 to-transparent"></div>
+          </div>
+          
+          {/* Ícones de especialidades com efeito hover */}
+          <div className="grid grid-cols-3 md:grid-cols-5 gap-4 mt-4 text-center">
+            <div className="flex flex-col items-center group">
+              <div className="w-14 h-14 bg-yellow-700 rounded-full flex items-center justify-center mb-2 shadow-md group-hover:bg-yellow-600 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img src="/icons/pizza-icon.svg" alt="Pizza" className="w-7 h-7 text-white relative z-10" onError={(e) => {
+                  e.currentTarget.src = "https://img.icons8.com/ios/50/ffffff/pizza.png";
+                }} />
+              </div>
+              <span className="text-white text-xs md:text-sm font-medium group-hover:text-yellow-200 transition-colors duration-300">Pizzas Artesanais</span>
+            </div>
+            
+            <div className="flex flex-col items-center group">
+              <div className="w-14 h-14 bg-yellow-700 rounded-full flex items-center justify-center mb-2 shadow-md group-hover:bg-yellow-600 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img src="/icons/oven-icon.svg" alt="Forno" className="w-7 h-7 text-white relative z-10" onError={(e) => {
+                  e.currentTarget.src = "https://img.icons8.com/ios/50/ffffff/pizza-oven.png";
+                }} />
+              </div>
+              <span className="text-white text-xs md:text-sm font-medium group-hover:text-yellow-200 transition-colors duration-300">Forno à Lenha</span>
+            </div>
+            
+            <div className="flex flex-col items-center group">
+              <div className="w-14 h-14 bg-yellow-700 rounded-full flex items-center justify-center mb-2 shadow-md group-hover:bg-yellow-600 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img src="/icons/wheat-icon.svg" alt="Massa" className="w-7 h-7 text-white relative z-10" onError={(e) => {
+                  e.currentTarget.src = "https://img.icons8.com/ios/50/ffffff/wheat.png";
+                }} />
+              </div>
+              <span className="text-white text-xs md:text-sm font-medium group-hover:text-yellow-200 transition-colors duration-300">Massa Fresca</span>
+            </div>
+            
+            <div className="flex flex-col items-center group">
+              <div className="w-14 h-14 bg-yellow-700 rounded-full flex items-center justify-center mb-2 shadow-md group-hover:bg-yellow-600 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img src="/icons/delivery-icon.svg" alt="Entrega" className="w-7 h-7 text-white relative z-10" onError={(e) => {
+                  e.currentTarget.src = "https://img.icons8.com/ios/50/ffffff/delivery--v1.png";
+                }} />
+              </div>
+              <span className="text-white text-xs md:text-sm font-medium group-hover:text-yellow-200 transition-colors duration-300">Entrega Rápida</span>
+            </div>
+            
+            <div className="flex flex-col items-center group">
+              <div className="w-14 h-14 bg-yellow-700 rounded-full flex items-center justify-center mb-2 shadow-md group-hover:bg-yellow-600 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img src="/icons/cheese-icon.svg" alt="Queijo" className="w-7 h-7 text-white relative z-10" onError={(e) => {
+                  e.currentTarget.src = "https://img.icons8.com/ios/50/ffffff/cheese.png";
+                }} />
+              </div>
+              <span className="text-white text-xs md:text-sm font-medium group-hover:text-yellow-200 transition-colors duration-300">Queijo Premium</span>
+            </div>
+          </div>
+          
+          {/* Selo de qualidade */}
+          <div className="absolute -right-6 -bottom-6 w-24 h-24 rounded-full border-2 border-yellow-600/30 flex items-center justify-center transform rotate-12">
+            <div className="w-16 h-16 rounded-full bg-yellow-700/70 flex items-center justify-center text-xs text-white font-bold">
+              DESDE<br/>1977
+            </div>
+          </div>
+        </div>
+        
+        {/* Detalhe decorativo inferior */}
+        <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-900 via-yellow-500 to-yellow-900"></div>
       </div>
 
       {/* Seção Produtos em Destaque */}
@@ -176,7 +375,7 @@ function Home() {
               transition={{ delay: 0.2 }}
               className="text-yellow-800 text-lg font-semibold"
             >
-              Descubra Nossos
+              Nossas Especialidades
             </motion.span>
 
             <motion.h2
@@ -185,7 +384,7 @@ function Home() {
               transition={{ delay: 0.4 }}
               className="text-4xl font-bold text-gray-800 mt-2 mb-4"
             >
-              Produtos em Destaque
+              Sabores em Destaque
             </motion.h2>
 
             <motion.div
@@ -195,93 +394,91 @@ function Home() {
               className="flex justify-center gap-2 mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-yellow-800"></span>
-              <span className="w-2 h-2 rounded-full bg-yellow-600"></span>
+              <span className="w-6 h-2 rounded-full bg-yellow-600"></span>
               <span className="w-2 h-2 rounded-full bg-yellow-800"></span>
             </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="text-lg text-gray-600 max-w-2xl mx-auto px-4"
-            >
-              Confira nossas pizzas mais populares, salgadas, doces e saudáveis.
-              Clique em uma imagem para ver mais detalhes.
-            </motion.p>
           </div>
         </div>
-        
       </motion.div>
 
       {/* Carrosséis de Produtos */}
-      <div className="flex flex-col md:flex-row justify-center items-start gap-8 px-10 mt-6">
-        {/* Carrossel 1: Pizzas Salgadas */}
+      <div className="flex flex-col md:flex-row justify-center items-start gap-8 px-10 mt-6 mb-16">
+        {/* Carrossel: Pizzas Salgadas */}
         <motion.div
           className="relative w-full md:w-1/3"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <div className="absolute -top-6 left-4 z-20 bg-yellow-600 text-white px-4 py-1 rounded-full font-semibold shadow-lg">
+            Tradicionais
+          </div>
           <Swiper
             modules={[Autoplay, Navigation]}
             autoplay={{ delay: 5000 }}
             navigation
             loop
-            className="w-full h-96 rounded-lg shadow-lg overflow-hidden"
+            className="w-full h-96 rounded-lg shadow-xl overflow-hidden border-4 border-yellow-100"
           >
             <SwiperSlide>
-              <Link to="/pizza-salga-1">
-                <div className="relative w-full h-full">
+              <Link to="/cardapio?tipo=1&pizza=1">
+                <div className="relative w-full h-full group">
                   <img
                     src="https://i.pinimg.com/736x/c6/51/b7/c651b7690ad8f6365932aabdd8ae9974.jpg"
                     alt="Pizza de Frango com Catupiry"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">
-                      Pizza de Frango com Catupiry
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-300 group-hover:translate-y-0">
+                    <span className="bg-yellow-600 text-white text-xs px-2 py-1 rounded-full">Mais Pedida</span>
+                    <h3 className="text-2xl font-bold text-white mt-2 drop-shadow-lg">
+                      Frango com Catupiry
                     </h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Deliciosa pizza de frango, catupiry e borda vulcão de
-                      catupiry.
+                    <div className="flex items-center mt-1 text-yellow-300">
+                      <span>★★★★★</span>
+                      <span className="text-white text-sm ml-2">(124 avaliações)</span>
+                    </div>
+                    <p className="text-white mt-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Deliciosa pizza de frango desfiado, catupiry cremoso e orégano.
                     </p>
+                    <div className="mt-4 flex justify-between items-center">
+                      <span className="text-white font-bold text-xl">R$ 49,90</span>
+                      <span className="bg-white text-yellow-700 px-3 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Ver Detalhes →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
             </SwiperSlide>
+            
             <SwiperSlide>
-              <Link to="/pizza-salga-2">
-                <div className="relative w-full h-full">
+              <Link to="/cardapio?tipo=1&pizza=2">
+                <div className="relative w-full h-full group">
                   <img
                     src="https://i.pinimg.com/736x/69/4a/2b/694a2bb1fb1d79eab87581ed6f253e4e.jpg"
-                    alt="Pizza de Bacon com Cheddar"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">
-                      Pizza de Bacon com Cheddar
-                    </h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza com bacon, muito cheddar e borda enrolada no
-                      cheddar.
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="/pizza-salga-3">
-                <div className="relative w-full h-full">
-                  <img
-                    src="https://i.pinimg.com/736x/2d/4b/0b/2d4b0b41bcb652fb584355dfb509aeb6.jpg"
                     alt="Pizza de Calabresa"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Calabresa</h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de calabresa com muito queijo.
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-300 group-hover:translate-y-0">
+                    <span className="bg-red-600 text-white text-xs px-2 py-1 rounded-full">Clássica</span>
+                    <h3 className="text-2xl font-bold text-white mt-2 drop-shadow-lg">
+                      Calabresa Especial
+                    </h3>
+                    <div className="flex items-center mt-1 text-yellow-300">
+                      <span>★★★★☆</span>
+                      <span className="text-white text-sm ml-2">(98 avaliações)</span>
+                    </div>
+                    <p className="text-white mt-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Calabresa fatiada, cebola roxa, queijo muçarela e orégano.
                     </p>
+                    <div className="mt-4 flex justify-between items-center">
+                      <span className="text-white font-bold text-xl">R$ 45,90</span>
+                      <span className="bg-white text-yellow-700 px-3 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Ver Detalhes →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -289,71 +486,50 @@ function Home() {
           </Swiper>
         </motion.div>
 
-        {/* Carrossel 2: Pizzas Doces */}
+        {/* Carrossel: Pizzas Doces */}
         <motion.div
           className="relative w-full md:w-1/3 mt-8 md:mt-0"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
+          <div className="absolute -top-6 left-4 z-20 bg-pink-500 text-white px-4 py-1 rounded-full font-semibold shadow-lg">
+            Doces
+          </div>
           <Swiper
             modules={[Autoplay, Navigation]}
             autoplay={{ delay: 5000 }}
             navigation
             loop
-            className="w-full h-96 rounded-lg shadow-lg overflow-hidden"
+            className="w-full h-96 rounded-lg shadow-xl overflow-hidden border-4 border-yellow-100"
           >
             <SwiperSlide>
-              <Link to="/pizza-doce-1">
-                <div className="relative w-full h-full">
+              <Link to="/cardapio?tipo=3&pizza=5">
+                <div className="relative w-full h-full group">
                   <img
                     src="https://i.pinimg.com/736x/27/e5/24/27e5242a418b1ba7e8d011dbd67f34cb.jpg"
-                    alt="Pizza Kinder Bueno e Ferrero Rocher"
-                    className="w-full h-full object-cover"
+                    alt="Pizza Kinder Bueno"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">
-                      Pizza Kinder Bueno e Ferrero Rocher
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-300 group-hover:translate-y-0">
+                    <span className="bg-pink-500 text-white text-xs px-2 py-1 rounded-full">Premium</span>
+                    <h3 className="text-2xl font-bold text-white mt-2 drop-shadow-lg">
+                      Kinder Bueno
                     </h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de chocolate com Kinder Bueno e Ferrero Rocher.
+                    <div className="flex items-center mt-1 text-yellow-300">
+                      <span>★★★★★</span>
+                      <span className="text-white text-sm ml-2">(87 avaliações)</span>
+                    </div>
+                    <p className="text-white mt-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Chocolate, Kinder Bueno, avelãs e calda de chocolate.
                     </p>
-                  </div>
-                </div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="/pizza-doce-2">
-                <div className="relative w-full h-full">
-                  <img
-                    src="https://i.pinimg.com/736x/60/29/28/6029281b4336df95c7e110bca63eff43.jpg"
-                    alt="Pizza de Marshmallow"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Marshmallow</h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de Marshmallow com chocolate.
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="/pizza-doce-3">
-                <div className="relative w-full h-full">
-                  <img
-                    src="https://i.pinimg.com/736x/12/53/53/125353b54118ff31a88bb93bce48e6e0.jpg"
-                    alt="Pizza de Morango com Chocolate"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">
-                      Pizza de Morango com Chocolate
-                    </h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de Morango com Chocolate Branco e Nutella.
-                    </p>
+                    <div className="mt-4 flex justify-between items-center">
+                      <span className="text-white font-bold text-xl">R$ 55,90</span>
+                      <span className="bg-white text-pink-500 px-3 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Ver Detalhes →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -361,70 +537,50 @@ function Home() {
           </Swiper>
         </motion.div>
 
-        {/* Carrossel 3: Pizzas Saudáveis */}
+        {/* Carrossel: Pizzas Especiais */}
         <motion.div
-          className="relative w-full md:w-1/3"
+          className="relative w-full md:w-1/3 mt-8 md:mt-0"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
+          <div className="absolute -top-6 left-4 z-20 bg-green-600 text-white px-4 py-1 rounded-full font-semibold shadow-lg">
+            Especiais
+          </div>
           <Swiper
             modules={[Autoplay, Navigation]}
             autoplay={{ delay: 5000 }}
             navigation
             loop
-            className="w-full h-96 rounded-lg shadow-lg overflow-hidden"
+            className="w-full h-96 rounded-lg shadow-xl overflow-hidden border-4 border-yellow-100"
           >
             <SwiperSlide>
-              <Link to="/pizza-saudavel-1">
-                <div className="relative w-full h-full">
+              <Link to="/cardapio?tipo=2&pizza=4">
+                <div className="relative w-full h-full group">
                   <img
                     src="https://img.freepik.com/fotos-gratis/close-up-na-deliciosa-pizza_23-2150702817.jpg?t=st=1738446228~exp=1738449828~hmac=17a9efb11abb6e5021ce5ee86d325fc4e7484a7cd1a3451baa34656c201d9a90&w=360"
-                    alt="Pizza Saudável 1"
-                    className="w-full h-full object-cover"
+                    alt="Pizza Vegetariana"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Couve-Flor</h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de Couve-Flor com queijo de cabra.
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="/pizza-saudavel-2">
-                <div className="relative w-full h-full">
-                  <img
-                    src="https://img.freepik.com/fotos-gratis/close-up-em-uma-deliciosa-pizza_23-2150852087.jpg?t=st=1738446087~exp=1738449687~hmac=4785c59e9a8a1074e96bc1c243d201129ac2cb86a0ac3d14deb87f4a81711a8b&w=360"
-                    alt="Pizza Saudável 2"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">
-                      Pizza de Frango com Espinafre
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-300 group-hover:translate-y-0">
+                    <span className="bg-green-600 text-white text-xs px-2 py-1 rounded-full">Vegetariana</span>
+                    <h3 className="text-2xl font-bold text-white mt-2 drop-shadow-lg">
+                      Vegetariana Especial
                     </h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza de Frango com Espinafre ao molho branco.
+                    <div className="flex items-center mt-1 text-yellow-300">
+                      <span>★★★★☆</span>
+                      <span className="text-white text-sm ml-2">(56 avaliações)</span>
+                    </div>
+                    <p className="text-white mt-2 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Rúcula, tomate seco, champignon e queijo vegano.
                     </p>
-                  </div>
-                </div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="/pizza-saudavel-3">
-                <div className="relative w-full h-full">
-                  <img
-                    src="https://i.pinimg.com/736x/05/d3/5b/05d35bc9ab4dafd9f46c4c6b7471d492.jpg"
-                    alt="Pizza Saudável 3"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 transition-all duration-300 hover:bg-opacity-70">
-                    <h3 className="text-xl font-bold">Pizza de Legumes</h3>
-                    <p className="text-lg mt-2 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      Pizza com legumes frescos brazeados com queijo de
-                      castanha.
-                    </p>
+                    <div className="mt-4 flex justify-between items-center">
+                      <span className="text-white font-bold text-xl">R$ 52,90</span>
+                      <span className="bg-white text-green-600 px-3 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Ver Detalhes →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -433,70 +589,171 @@ function Home() {
         </motion.div>
       </div>
 
-      {/* Seção de Avaliações */}
-      <div className= "bg-amber-100 py-10 mt-10 ">
-      <div className="text-center mt-10">
-        <h3 className="text-sm text-gray-500">Avaliações Google</h3>
-        <h2 className="text-4xl font-bold text-gray-800">
-          Avaliações dos Clientes
-        </h2>
-      </div>
+      {/* Seção de Avaliações do Google */}
+      <div className="bg-amber-100 py-16 mt-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <div className="flex items-center justify-center mb-3">
+              <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
+                   alt="Google" className="h-8" />
+              <span className="ml-2 text-lg font-medium text-gray-600">Reviews</span>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-800">
+              O que nossos clientes dizem
+            </h2>
+            <div className="flex items-center justify-center mt-4">
+              <div className="text-yellow-400 text-2xl">★★★★★</div>
+              <span className="ml-2 text-gray-700 font-medium">4.8/5</span>
+              <span className="ml-2 text-gray-500">(278 avaliações)</span>
+            </div>
+          </div>
 
-      {/* Carrossel de Avaliações */}
-      <div className="flex justify-center mt-6 mb-13">
-        <div className="w-[80%] min-h-[240px] overflow-hidden rounded-lg shadow-lg">
-          <Swiper
-            modules={[Autoplay]}
-            autoplay={{ delay: 3000 }}
-            speed={1000}
-            loop
-            className="w-full h-full"
-          >
-            <SwiperSlide className="flex items-center p-6 bg-gray-100">
-              <img
-                src="https://img.freepik.com/fotos-gratis/retrato-de-homem-feliz_23-2148841981.jpg?w=740"
-                alt="Cliente 1"
-                className="w-24 h-24 rounded-full mr-6"
-              />
-              <div>
-                <p className="text-gray-800 text-lg">
-                  "Melhor pizza que já comi! Massa leve e ingredientes frescos."
-                </p>
-                <p className="text-yellow-500 mt-2">★★★★★</p>
-                <p className="text-gray-600">- João Silva</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="flex items-center p-6 bg-gray-100">
-              <img
-                src="https://img.freepik.com/fotos-gratis/retrato-de-mulher-sorrindo_23-2148297036.jpg?w=740"
-                alt="Cliente 2"
-                className="w-24 h-24 rounded-full mr-6"
-              />
-              <div>
-                <p className="text-gray-800 text-lg">
-                  "Atendimento excelente e entrega super rápida!"
-                </p>
-                <p className="text-yellow-500 mt-2">★★★★★</p>
-                <p className="text-gray-600">- Maria Oliveira</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="flex items-center p-6 bg-gray-100">
-              <img
-                src="https://img.freepik.com/fotos-gratis/jovem-homem-de-oculos-e-sorrindo_23-2148978211.jpg?w=740"
-                alt="Cliente 3"
-                className="w-24 h-24 rounded-full mr-6"
-              />
-              <div>
-                <p className="text-gray-800 text-lg">
-                  "Sabores incríveis e opções saudáveis que surpreenderam!"
-                </p>
-                <p className="text-yellow-500 mt-2">★★★★★</p>
-                <p className="text-gray-600">- Pedro Santos</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          {/* Carrossel de Avaliações */}
+          <div className="max-w-5xl mx-auto">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              autoplay={{ delay: 3000 }}
+              pagination={{ clickable: true }}
+              speed={1000}
+              loop
+              slidesPerView={1}
+              breakpoints={{
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 30 }
+              }}
+              className="pb-12"
+            >
+              <SwiperSlide>
+                <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src="https://img.freepik.com/fotos-gratis/retrato-de-homem-feliz_23-2148841981.jpg?w=740"
+                      alt="Cliente 1"
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-800">João Silva</p>
+                      <p className="text-gray-500 text-sm">Cliente Local • 2 semanas atrás</p>
+                    </div>
+                  </div>
+                  <div className="text-yellow-400 mb-3">★★★★★</div>
+                  <p className="text-gray-700">
+                    "Melhor pizza que já comi! Massa leve e ingredientes frescos. O atendimento foi excelente e a entrega chegou antes do previsto."
+                  </p>
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide>
+                <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src="https://img.freepik.com/fotos-gratis/mulher-jovem-e-elegante-moderna_144627-27866.jpg"
+                      alt="Cliente 2"
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-800">Ana Oliveira</p>
+                      <p className="text-gray-500 text-sm">Cliente Local • 1 mês atrás</p>
+                    </div>
+                  </div>
+                  <div className="text-yellow-400 mb-3">★★★★★</div>
+                  <p className="text-gray-700">
+                    "A pizza de chocolate com morango é simplesmente divina! Peço toda semana e nunca me decepciona. O app é super fácil de usar também."
+                  </p>
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide>
+                <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src="https://img.freepik.com/fotos-gratis/homem-bonito-e-confiante-sorrindo-com-as-maos-cruzadas-no-peito_176420-18743.jpg"
+                      alt="Cliente 3"
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-800">Carlos Mendes</p>
+                      <p className="text-gray-500 text-sm">Guia Local • 3 meses atrás</p>
+                    </div>
+                  </div>
+                  <div className="text-yellow-400 mb-3">★★★★☆</div>
+                  <p className="text-gray-700">
+                    "Ambiente aconchegante e pizzas deliciosas. A calabresa é especialmente boa. Só acho que o tempo de espera poderia ser menor nos fins de semana."
+                  </p>
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide>
+                <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src="https://img.freepik.com/fotos-gratis/retrato-de-uma-jovem-mulher-bonita-que-esta-posando-e-sorrindo_176420-9798.jpg"
+                      alt="Cliente 4"
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-800">Mariana Costa</p>
+                      <p className="text-gray-500 text-sm">Cliente Local • 2 dias atrás</p>
+                    </div>
+                  </div>
+                  <div className="text-yellow-400 mb-3">★★★★★</div>
+                  <p className="text-gray-700">
+                    "Fiz uma festa de aniversário e encomendei várias pizzas. Todos elogiaram muito! O atendimento foi impecável e as pizzas chegaram quentes e no horário combinado."
+                  </p>
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide>
+                <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src="https://img.freepik.com/fotos-gratis/homem-de-meia-idade-com-expressao-seria_23-2149871135.jpg"
+                      alt="Cliente 5"
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-800">Roberto Almeida</p>
+                      <p className="text-gray-500 text-sm">Cliente Local • 1 semana atrás</p>
+                    </div>
+                  </div>
+                  <div className="text-yellow-400 mb-3">★★★★★</div>
+                  <p className="text-gray-700">
+                    "Sou cliente há mais de 5 anos e a qualidade nunca caiu. A pizza vegetariana especial é meu pedido de sempre. Recomendo muito!"
+                  </p>
+                </div>
+              </SwiperSlide>
+              
+              <SwiperSlide>
+                <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                  <div className="flex items-center mb-4">
+                    <img
+                      src="https://img.freepik.com/fotos-gratis/mulher-jovem-e-bonita_144627-9810.jpg"
+                      alt="Cliente 6"
+                      className="w-12 h-12 rounded-full mr-4"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-800">Juliana Santos</p>
+                      <p className="text-gray-500 text-sm">Cliente Local • 3 semanas atrás</p>
+                    </div>
+                  </div>
+                  <div className="text-yellow-400 mb-3">★★★☆☆</div>
+                  <p className="text-gray-700">
+                    "As pizzas são muito boas, mas na última vez o delivery demorou mais que o previsto. O gerente entrou em contato depois para se desculpar, o que achei muito profissional."
+                  </p>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+            
+            <div className="text-center mt-8">
+              <a href="#" className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
+                Ver todas as avaliações no Google
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
       </div>
 
       {/* Colagem */}
