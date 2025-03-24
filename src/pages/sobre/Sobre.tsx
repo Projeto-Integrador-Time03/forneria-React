@@ -129,7 +129,7 @@ function Sobre() {
       </div>
 
       {/* Nossa Equipe com layout melhorado */}
-      <div className="w-screen bg-[url('https://img.freepik.com/free-photo/close-up-person-cooking_23-2150980258.jpg?t=st=1742784378~exp=1742787978~hmac=f842ab830d204b1884456c2bbae04b317e1006e759704197ec56f7d86c3ee91a&w=1380')] bg-cover bg-fixed py-20">
+      <div className="w-screen bg-[url('/src/assets/massa.jpg')] bg-cover bg-fixed py-20">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
