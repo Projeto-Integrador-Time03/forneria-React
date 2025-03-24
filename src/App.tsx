@@ -14,6 +14,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import Cadastro from './pages/cadastro/Cadastro'
 import FormPizza from './components/pizzas/formpizzas/FormPizzas'
 import DeletarPizzas from './components/pizzas/deletarpizzas/DeletarPizzas'
+import ListaPizzasPorTipo from "./pages/pizzas/ListaPizzasPorTipo";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
@@ -44,6 +45,7 @@ function App() {
               <Route path="/deletarpizza/:id" element={<DeletarPizzas />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/sobre" element={<Sobre />} />
+              <Route path="/pizzas/tipo/:id" element={<ListaPizzasPorTipo />} />
 
             </Routes>
           </div>

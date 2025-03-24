@@ -10,41 +10,101 @@ function Home() {
     <div className="w-screen bg-white mb-20">
       {/* Seção principal com imagem de fundo */}
       <div
-        className="w-screen h-[750px] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4"
+        className="w-screen h-[750px] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4 relative overflow-hidden"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1536622308015-0740925b8221?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+            "url(https://img.freepik.com/free-photo/delicious-pizza-indoors_23-2150873878.jpg?t=st=1742782272~exp=1742785872~hmac=b6244a4642de6f03dae5aa40a5fe8856ae3390d1d86080914b85acf18ca15be0&w=1380)",
         }}
       >
-        {/* Título principal */}
-        <h2 className="font-quicksand text-5xl font-bold drop-shadow-lg transition-transform transform hover:scale-105 animate-pulse">
-          Seja Bem-Vindo à Forneria 77!
-        </h2>
-        <p className="text-lg mt-2 drop-shadow-md">
-          Sabor sem regras, do clássico ao saudável. Clique no botão abaixo para
-          começar.
-        </p>
-        <Link to={`/cardapio`}>
-          <button className="mt-4 bg-black hover:bg-yellow-800 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 transition-transform transform hover:scale-105">
-            Começar
-          </button>
-        </Link>
+        {/* Overlay com textura */}
+        <div className="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
+        
+        {/* Elementos decorativos */}
+        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-dashed border-yellow-500/30 rounded-full"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 border-2 border-dashed border-yellow-500/30 rounded-full"></div>
+        
+        {/* Conteúdo principal */}
+        <div className="relative z-10 max-w-4xl mx-auto">
+          {/* Selo de autenticidade */}
+          <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-yellow-800/80 flex items-center justify-center transform rotate-12 border-4 border-double border-yellow-600 shadow-lg hidden md:flex">
+            <span className="text-white font-serif text-lg text-center">Autêntica<br/>Pizza<br/>Italiana</span>
+          </div>
+          
+          <h2 className="font-serif text-6xl font-bold drop-shadow-lg mb-6 text-yellow-50">
+            Seja Bem-Vindo à <span className="text-yellow-400 italic">Forneria 77!</span>
+          </h2>
+          
+          <p className="text-xl mt-4 drop-shadow-md max-w-2xl mx-auto font-light">
+            Sabor sem regras, do clássico ao saudável. Nossa tradição italiana de mais de 40 anos traz o melhor da gastronomia para sua mesa.
+          </p>
+          
+          <Link to={`/cardapio`}>
+            <button className="mt-8 bg-yellow-800 hover:bg-yellow-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 border-b-4 border-yellow-900 group">
+              <span className="flex items-center">
+                Ver Cardápio 
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </button>
+          </Link>
+          
+          {/* Decoração inferior */}
+          <div className="flex justify-center mt-12 space-x-4">
+            <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
+            <span className="w-3 h-3 bg-white rounded-full"></span>
+            <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
+          </div>
+        </div>
       </div>
 
       {/* Seção "Por que nos escolher?" */}
-      <div id="sobre-nos" className="text-center mt-16 mb-12 transition duration-300">
-        <motion.h3 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-bold mb-6 border-b-4 border-yellow-800 inline-block pb-2 text-gray-800"
-        >
-          Por que nos escolher?
-        </motion.h3>
+      <div className="relative py-16 bg-gradient-to-b from-white to-yellow-50 overflow-hidden">
+        {/* Elementos decorativos de fundo */}
+        <div className="absolute inset-0 overflow-hidden opacity-10">
+          <img src="/pizza-pattern.png" alt="" className="absolute w-full h-full object-cover" 
+               onError={(e) => {e.currentTarget.style.display = 'none'}} />
+        </div>
+        <div className="absolute -left-20 top-10 w-40 h-40 rounded-full bg-yellow-800/10"></div>
+        <div className="absolute -right-20 bottom-10 w-40 h-40 rounded-full bg-yellow-800/10"></div>
+        
+        {/* Ícone decorativo de pizza */}
+        <div className="absolute left-1/2 -translate-x-1/2 -top-10 w-20 h-20 bg-yellow-800 rounded-full flex items-center justify-center shadow-lg">
+          <img src="/icons/pizza-icon.svg" alt="Pizza" className="w-10 h-10 text-white" 
+               onError={(e) => {e.currentTarget.src = "https://img.icons8.com/ios/50/ffffff/pizza.png"}} />
+        </div>
+        
+        <div id="sobre-nos" className="text-center mt-4 mb-12 transition duration-300 relative z-10">
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold mb-6 pb-2 text-gray-800 relative inline-block"
+          >
+            Por que nos escolher?
+            <div className="absolute -bottom-2 left-0 w-full h-1 bg-yellow-800"></div>
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-10 h-10 bg-white border-2 border-yellow-800 rounded-full flex items-center justify-center -mb-4">
+              <span className="text-yellow-800 text-xl font-serif">77</span>
+            </div>
+          </motion.h3>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl mt-8 text-gray-600 max-w-3xl mx-auto px-6"
+          >
+            Há mais de quatro décadas, servimos as melhores pizzas da cidade com ingredientes selecionados e receitas exclusivas.
+          </motion.p>
+        </div>
       </div>
 
       {/* Sobre Nós - Layout Aprimorado */}
-      <div className="max-w-7xl mx-auto px-6 mb-20">
+      <div className="max-w-7xl mx-auto px-6 mb-20 relative">
+        {/* Elementos decorativos sutis */}
+        <div className="absolute -left-10 top-20 w-20 h-20 rounded-full bg-yellow-800/5 z-0"></div>
+        <div className="absolute -right-10 bottom-20 w-20 h-20 rounded-full bg-yellow-800/5 z-0"></div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Texto à Esquerda com Cards */}
           <motion.div
@@ -57,7 +117,10 @@ function Home() {
                 whileHover={{ scale: 1.02 }}
                 className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-yellow-800"
               >
-                <h4 className="text-xl font-bold text-yellow-800 mb-2">Tradição & Inovação</h4>
+                <h4 className="text-xl font-bold text-yellow-800 mb-2 flex items-center">
+                  <span className="w-6 h-6 bg-yellow-800 rounded-full flex items-center justify-center text-white mr-2 text-xs">1</span>
+                  Tradição & Inovação
+                </h4>
                 <p className="text-gray-700">
                   Na Forneria 77, reinventamos a forma de saborear pizza, combinando receitas tradicionais com inovações que surpreendem. Acreditamos que todo mundo merece saborear uma boa pizza do jeito que mais gosta!
                 </p>
@@ -67,7 +130,10 @@ function Home() {
                 whileHover={{ scale: 1.02 }}
                 className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-yellow-800"
               >
-                <h4 className="text-xl font-bold text-yellow-800 mb-2">Sabor Para Todos</h4>
+                <h4 className="text-xl font-bold text-yellow-800 mb-2 flex items-center">
+                  <span className="w-6 h-6 bg-yellow-800 rounded-full flex items-center justify-center text-white mr-2 text-xs">2</span>
+                  Sabor Para Todos
+                </h4>
                 <p className="text-gray-700">
                   Seja você fã do fast food tradicional ou alguém que busca uma alimentação mais equilibrada, temos opções para todos os gostos. Nossas receitas tradicionais têm ingredientes selecionados, massas macias e recheios generosos.
                 </p>
@@ -77,7 +143,10 @@ function Home() {
                 whileHover={{ scale: 1.02 }}
                 className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-yellow-800"
               >
-                <h4 className="text-xl font-bold text-yellow-800 mb-2">Equilíbrio & Prazer</h4>
+                <h4 className="text-xl font-bold text-yellow-800 mb-2 flex items-center">
+                  <span className="w-6 h-6 bg-yellow-800 rounded-full flex items-center justify-center text-white mr-2 text-xs">3</span>
+                  Equilíbrio & Prazer
+                </h4>
                 <p className="text-gray-700">
                   Acreditamos que uma alimentação equilibrada não precisa abrir mão do prazer. Nosso cardápio é pensado para quem busca opções rápidas, nutritivas e deliciosas, com ingredientes frescos, orgânicos e de alta qualidade.
                 </p>
@@ -85,7 +154,7 @@ function Home() {
             </div>
           </motion.div>
 
-          {/* Imagens com Carrossel e Efeito Cascata - Redesenhado */}
+          {/* Imagens com Carrossel */}
           <div className="relative">
             {/* Primeira Imagem */}
             <motion.div
@@ -95,8 +164,9 @@ function Home() {
               className="w-full h-80 rounded-xl shadow-xl overflow-hidden"
             >
               <Swiper
-                modules={[Autoplay]}
+                modules={[Autoplay, Pagination]}
                 autoplay={{ delay: 3000 }}
+                pagination={{ clickable: true }}
                 speed={1000}
                 loop
                 className="w-full h-full"
@@ -114,116 +184,15 @@ function Home() {
                     </div>
                   </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://img.freepik.com/fotos-gratis/queijo-georgiano-khachapuri-imeruli-comida-tradicional-da-georgia-khachapuri-quente_114579-140.jpg?w=360"
-                    alt="Pizza Especial"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h3 className="text-xl font-bold">Especialidades</h3>
-                      <p className="text-sm">Receitas exclusivas da casa</p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </motion.div>
-
-            {/* Segunda Imagem */}
-            <motion.div
-              initial={{ opacity: 0, x: 80 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-64 h-64 rounded-xl shadow-xl overflow-hidden absolute -bottom-10 -right-5 border-4 border-white"
-            >
-              <Swiper
-                modules={[Autoplay]}
-                autoplay={{ delay: 3500 }}
-                speed={1000}
-                loop
-                className="w-full h-full"
-              >
-                <SwiperSlide>
-                  <img
-                    src="https://i.pinimg.com/736x/7c/18/b2/7c18b221d22d6ea6887d6583149b9d7b.jpg"
-                    alt="Ambiente Acolhedor"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
-                    <div className="absolute bottom-3 left-3 text-white">
-                      <h3 className="text-lg font-bold">Ambiente Acolhedor</h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://i.pinimg.com/736x/27/e5/24/27e5242a418b1ba7e8d011dbd67f34cb.jpg"
-                    alt="Experiência Única"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
-                    <div className="absolute bottom-3 left-3 text-white">
-                      <h3 className="text-lg font-bold">Experiência Única</h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
               </Swiper>
             </motion.div>
             
-            {/* Elemento decorativo */}
-            <div className="absolute -top-6 -left-6 w-20 h-20 bg-yellow-800 rounded-full opacity-20"></div>
-            <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-yellow-600 rounded-full opacity-20"></div>
+            {/* Selo de qualidade */}
+            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-yellow-800 rounded-full flex items-center justify-center text-white font-serif text-center text-xs transform rotate-12 shadow-lg border-2 border-double border-yellow-600 z-10">
+              <span>Desde<br/>1977</span>
+            </div>
           </div>
         </div>
-        
-        {/* Ícones de Diferenciais */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-        >
-          <div className="flex flex-col items-center text-center p-4">
-            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
-              <img src="/icons/pizza-icon.svg" alt="Qualidade" className="w-8 h-8" onError={(e) => {
-                e.currentTarget.src = "https://img.icons8.com/ios/50/pizza.png";
-              }} />
-            </div>
-            <h4 className="font-bold text-gray-800">Ingredientes Premium</h4>
-            <p className="text-sm text-gray-600 mt-2">Selecionados diariamente para garantir frescor e sabor</p>
-          </div>
-          
-          <div className="flex flex-col items-center text-center p-4">
-            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
-              <img src="/icons/chef-icon.svg" alt="Chefs" className="w-8 h-8" onError={(e) => {
-                e.currentTarget.src = "https://img.icons8.com/ios/50/chef-hat.png";
-              }} />
-            </div>
-            <h4 className="font-bold text-gray-800">Chefs Especializados</h4>
-            <p className="text-sm text-gray-600 mt-2">Mestres pizzaiolos com experiência internacional</p>
-          </div>
-          
-          <div className="flex flex-col items-center text-center p-4">
-            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
-              <img src="/icons/delivery-icon.svg" alt="Entrega" className="w-8 h-8" onError={(e) => {
-                e.currentTarget.src = "https://img.icons8.com/ios/50/delivery--v1.png";
-              }} />
-            </div>
-            <h4 className="font-bold text-gray-800">Entrega Rápida</h4>
-            <p className="text-sm text-gray-600 mt-2">Sua pizza chega quentinha e no tempo prometido</p>
-          </div>
-          
-          <div className="flex flex-col items-center text-center p-4">
-            <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
-              <img src="/icons/heart-icon.svg" alt="Paixão" className="w-8 h-8" onError={(e) => {
-                e.currentTarget.src = "https://img.icons8.com/ios/50/like--v1.png";
-              }} />
-            </div>
-            <h4 className="font-bold text-gray-800">Feito com Paixão</h4>
-            <p className="text-sm text-gray-600 mt-2">Cada pizza é preparada com dedicação e amor</p>
-          </div>
-        </motion.div>
       </div>
 
       {/* Faixa Profissional de Pizzaria */}
@@ -757,7 +726,7 @@ function Home() {
       </div>
 
       {/* Colagem */}
-      <div className="relative w-screen pt-[37.5%] shadow-lg rounded-lg overflow-hidden mt-6">
+      <div className="relative w-screen pt-[37.5%] shadow-lg rounded-lg overflow-hidden mt-6 mb-0">
         <iframe
           loading="lazy"
           className="absolute top-0 left-0 w-screen h-full border-none"
@@ -768,8 +737,26 @@ function Home() {
       </div>
 
       {/* Seção Perguntas Frequentes */}
-      <div className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="text-center mb-12">
+      <div className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden mb-0 ">
+        {/* Elementos decorativos */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-800/5 rounded-full"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-yellow-800/5 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-800/5 rounded-full"></div>
+        
+        <div className="text-center mb-12 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-block mb-4"
+          >
+            <div className="bg-yellow-800 text-white p-3 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </motion.div>
+          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -790,22 +777,32 @@ function Home() {
           </motion.p>
         </div>
 
-        <div className="max-w-4xl mx-auto mt-12 space-y-6 px-6">
+        <div className="max-w-4xl mx-auto mt-12 space-y-6 px-6 relative z-10">
           <motion.details
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group"
+            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group hover:border-yellow-800/30 transition-all duration-300"
           >
-            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300">
-              Canais de Relacionamento
+            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300 flex items-center justify-between">
+              <div className="flex items-center">
+                <span className="bg-yellow-800/10 text-yellow-800 p-2 rounded-full mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </span>
+                Canais de Relacionamento
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </summary>
-            <div className="mt-4 text-gray-600 space-y-2">
+            <div className="mt-4 text-gray-600 space-y-2 pl-14">
               <p>Sou Cliente: Para entrar em contato com a gente, você pode acessar:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Forneria77App: nossa central de Ajuda dentro do aplicativo</li>
                 <li>77Food: nossa central de Ajuda dentro do aplicativo</li>
-                <li>Ouvidoria Forneria 77 – Clique aqui</li>
+                <li>Ouvidoria Forneria 77 – <a href="#" className="text-yellow-800 hover:underline">Clique aqui</a></li>
               </ul>
             </div>
           </motion.details>
@@ -814,12 +811,22 @@ function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group"
+            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group hover:border-yellow-800/30 transition-all duration-300"
           >
-            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300">
-              Meu Pedido não Chegou
+            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300 flex items-center justify-between">
+              <div className="flex items-center">
+                <span className="bg-yellow-800/10 text-yellow-800 p-2 rounded-full mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </span>
+                Meu Pedido não Chegou
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </summary>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600 pl-14">
               Não se preocupe, você pode entrar em contato com a loja pelo próprio aplicativo...
             </p>
           </motion.details>
@@ -828,16 +835,44 @@ function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group"
+            className="bg-white shadow-xl rounded-2xl p-6 border border-gray-100 group hover:border-yellow-800/30 transition-all duration-300"
           >
-            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300">
-              Não quero mais o Pedido
+            <summary className="text-2xl font-semibold cursor-pointer group-open:text-yellow-800 transition-colors duration-300 flex items-center justify-between">
+              <div className="flex items-center">
+                <span className="bg-yellow-800/10 text-yellow-800 p-2 rounded-full mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+                Não quero mais o Pedido
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </summary>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600 pl-14">
               Caso o pedido tenha mais de 5 minutos, vai aparecer a opção "Clique para contato com nosso atendimento".
             </p>
           </motion.details>
         </div>
+        
+        {/* Botão de contato adicional */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-center mt-12"
+        >
+          <a 
+            href="#" 
+            className="inline-flex items-center px-6 py-3 bg-yellow-800 text-white rounded-full font-medium hover:bg-yellow-900 transition-colors shadow-lg hover:shadow-xl"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            Fale com um Atendente
+          </a>
+        </motion.div>
       </div>
     </div>
   );

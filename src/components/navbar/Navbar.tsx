@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 import { AuthContext } from "../../contexts/AuthContext";
+import logo1 from "../../assets/logo1.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,11 +49,20 @@ const Navbar = () => {
             to={usuario.token !== "" ? "/home" : "/"}
             className="flex items-center gap-3 text-2xl font-bold text-white hover:text-yellow-800 transition-transform transform hover:scale-105"
           >
-            <img
-              src="https://i.imgur.com/NpHYkwe.png"
-              alt="Logo"
-              className="w-12 h-12 text-md text-white hover:text-yellow-800 transition"
-            />
+            <div className="relative">
+              {/* Moldura estilizada */}
+              <div className="absolute inset-0 border-2 border-yellow-600 rounded-full transform rotate-12 scale-110"></div>
+              <div className="absolute inset-0 border-2 border-yellow-800 rounded-full transform -rotate-6 scale-105"></div>
+              
+              {/* Logo com fundo circular */}
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-yellow-700 shadow-lg">
+                <img
+                  src={logo1}
+                  alt="Logo"
+                  className="w-full h-full object-cover transition hover:scale-110 duration-300"
+                />
+              </div>
+            </div>
             Forneria 77
           </Link>
 
